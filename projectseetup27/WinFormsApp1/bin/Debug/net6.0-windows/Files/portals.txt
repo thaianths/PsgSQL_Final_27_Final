@@ -1,0 +1,11 @@
+CREATE TABLE IF NOT EXISTS public.portals
+(
+    portal_id bigint NOT NULL,
+    portal_name character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    created_at bigint DEFAULT '0'::bigint,
+    CONSTRAINT "PK_266d55884220432da1b47b54a6b" PRIMARY KEY (portal_id)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;

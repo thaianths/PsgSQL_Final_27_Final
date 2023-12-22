@@ -1,0 +1,21 @@
+CREATE TABLE IF NOT EXISTS public.users
+(
+    portal_id bigint DEFAULT '0'::bigint,
+    portal_code character varying COLLATE pg_catalog."default" DEFAULT ''::character varying,
+    customer_id bigint DEFAULT '0'::bigint,
+    client_id bigint NOT NULL DEFAULT '0'::bigint,
+    country_prefix character varying COLLATE pg_catalog."default" DEFAULT '+84'::character varying,
+    member_created bigint DEFAULT '0'::bigint,
+    member_updated bigint DEFAULT '0'::bigint,
+    status smallint NOT NULL DEFAULT '1'::smallint,
+    created_at bigint DEFAULT '0'::bigint,
+    modified_at bigint DEFAULT '0'::bigint,
+    uid character varying COLLATE pg_catalog."default" NOT NULL,
+    username character varying COLLATE pg_catalog."default" NOT NULL,
+    password character varying COLLATE pg_catalog."default" NOT NULL,
+    fullname character varying COLLATE pg_catalog."default" NOT NULL,
+    last_login bigint NOT NULL DEFAULT '0'::bigint,
+    change_pass_at bigint NOT NULL DEFAULT '0'::bigint,
+    role character varying COLLATE pg_catalog."default" NOT NULL DEFAULT '1'::character varying,
+    member_id bigint NOT NULL DEFAULT '0'::bigint
+)

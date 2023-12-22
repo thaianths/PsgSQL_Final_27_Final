@@ -1,0 +1,29 @@
+CREATE TABLE IF NOT EXISTS public.base_vehicles
+(
+    portal_id bigint DEFAULT '0'::bigint,
+    portal_code character varying COLLATE pg_catalog."default" DEFAULT ''::character varying,
+    customer_id bigint DEFAULT '0'::bigint,
+    client_id bigint NOT NULL DEFAULT '0'::bigint,
+    country_prefix character varying COLLATE pg_catalog."default" DEFAULT '+84'::character varying,
+    member_created bigint DEFAULT '0'::bigint,
+    member_updated bigint DEFAULT '0'::bigint,
+    status smallint NOT NULL DEFAULT '1'::smallint,
+    created_at bigint DEFAULT '0'::bigint,
+    modified_at bigint DEFAULT '0'::bigint,
+    resource_id bigint NOT NULL,
+    cont_weight real NOT NULL DEFAULT '0'::real,
+    handling_unit_ids character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    vheight real NOT NULL DEFAULT '0'::real,
+    vlength real NOT NULL DEFAULT '0'::real,
+    vwidth real NOT NULL DEFAULT '0'::real,
+    max_weight real NOT NULL DEFAULT '0'::real,
+    name character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    "group" bigint NOT NULL DEFAULT '0'::bigint,
+    group_name character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    CONSTRAINT "PK_65f45b2c48d576c64ab3c690838" PRIMARY KEY (resource_id),
+    CONSTRAINT "UQ_65f45b2c48d576c64ab3c690838" UNIQUE (resource_id)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;

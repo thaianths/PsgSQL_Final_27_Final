@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "dgSpecHash": "pr4ausxUPdp/Tq/2ThdqSD4AQIDi7t8f561s81CLOKAfDppOdznfGl5hvwKTO0QF5E1czKMQEpSDlx/XJBM8WQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\SW24\\source\\repos\\projectseetup25\\SettingPsql\\SettingPsql.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\SW24\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\8.0.0\\microsoft.extensions.dependencyinjection.8.0.0.nupkg.sha512",
+    "C:\\Users\\SW24\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.0\\microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512",
+    "C:\\Users\\SW24\\.nuget\\packages\\microsoft.extensions.options\\7.0.0\\microsoft.extensions.options.7.0.0.nupkg.sha512",
+    "C:\\Users\\SW24\\.nuget\\packages\\microsoft.extensions.primitives\\7.0.0\\microsoft.extensions.primitives.7.0.0.nupkg.sha512",
+    "C:\\Users\\SW24\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

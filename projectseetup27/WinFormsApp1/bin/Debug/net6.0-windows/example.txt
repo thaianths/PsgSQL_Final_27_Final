@@ -1,0 +1,39 @@
+CREATE TABLE example (
+	id SERIAL PRIMARY KEY,
+	url VARCHAR(255) NOT NULL,
+	name VARCHAR(255) NOT NULL,
+	description VARCHAR (255)
+
+);
+INSERT INTO example (url, name)
+VALUES('https://www.postgresqltutorial.com','PostgreSQL Tutorial');
+INSERT INTO example (url, name)
+VALUES('https://www.postgresqltutorial.com','PostgreSQL Tutorial');
+INSERT INTO example (url, name)
+VALUES('https://www.postgresqltutorial.com','PostgreSQL Tutorial');
+INSERT INTO example (url, name)
+VALUES('https://www.postgresqltutorial.com','PostgreSQL Tutorial');
+INSERT INTO example (url, name)
+VALUES('https://www.postgresqltutorial.com','PostgreSQL Tutorial');
+INSERT INTO example (url, name)
+VALUES('https://www.postgresqltutorial.com','PostgreSQL Tutorial');
+INSERT INTO example (url, name)
+VALUES('https://www.postgresqltutorial.com','PostgreSQL Tutorial');
+INSERT INTO example (url, name)
+VALUES('https://www.postgresqltutorial.com','PostgreSQL Tutorial');
+INSERT INTO example (url, name)
+VALUES('https://www.postgresqltutorial.com','PostgreSQL Tutorial');
+INSERT INTO example (url, name)
+VALUES('https://www.postgresqltutorial.com','PostgreSQL Tutorial');
+INSERT INTO example (url, name)
+VALUES('https://www.postgresqltutorial.com','PostgreSQL Tutorial');
+INSERT INTO example (url, name)
+VALUES('https://www.postgresqltutorial.com','PostgreSQL Tutorial');
+INSERT INTO example (url, name)
+VALUES('https://www.postgresqltutorial.com','PostgreSQL Tutorial');
+INSERT INTO example (url, name)
+VALUES('https://www.postgresqltutorial.com','PostgreSQL Tutorial');
+INSERT INTO example (url, name)
+VALUES('https://www.postgresqltutorial.com','PostgreSQL Tutorial');
+INSERT INTO example (url, name)
+VALUES('https://www.postgresqltutorial.com','PostgreSQL Tutorial');

@@ -1,0 +1,28 @@
+CREATE TABLE IF NOT EXISTS public.avigo_offer
+(
+    avigo_offer_id character varying COLLATE pg_catalog."default" NOT NULL,
+    driver_name character varying COLLATE pg_catalog."default" NOT NULL,
+    driver_phone character varying COLLATE pg_catalog."default" NOT NULL,
+    kind_of_vehicle integer NOT NULL,
+    registration_number character varying COLLATE pg_catalog."default" NOT NULL,
+    class_of_vehicle character varying COLLATE pg_catalog."default" NOT NULL,
+    estimated_time_of_standby bigint NOT NULL DEFAULT '0'::bigint,
+    addr_of_standby character varying COLLATE pg_catalog."default" NOT NULL,
+    latitude_of_standby_addr real NOT NULL DEFAULT '0'::real,
+    longitude_of_standby_addr real NOT NULL DEFAULT '0'::real,
+    "timestamp" bigint NOT NULL DEFAULT '0'::bigint,
+    status smallint NOT NULL DEFAULT '0'::smallint,
+    created_at bigint NOT NULL DEFAULT '0'::bigint,
+    driver_id character varying COLLATE pg_catalog."default" NOT NULL,
+    offer_id bigint NOT NULL DEFAULT '0'::bigint,
+    modified_at bigint NOT NULL DEFAULT '0'::bigint,
+    confirm_time bigint NOT NULL DEFAULT '0'::bigint,
+    request_id bigint NOT NULL DEFAULT '0'::bigint,
+    trip_id character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    CONSTRAINT "PK_180617173c3109a375a6435a010" PRIMARY KEY (avigo_offer_id),
+    CONSTRAINT "UQ_180617173c3109a375a6435a010" UNIQUE (avigo_offer_id)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;

@@ -1,0 +1,20 @@
+CREATE TABLE IF NOT EXISTS public.district_tariff
+(
+    dist_tariff_id bigint NOT NULL,
+    country character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    area character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    cid bigint NOT NULL DEFAULT '84'::bigint,
+    pid bigint NOT NULL DEFAULT '0'::bigint,
+    pname character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    did bigint NOT NULL DEFAULT '84'::bigint,
+    dname character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    level smallint NOT NULL DEFAULT '0'::smallint,
+    created_at bigint NOT NULL DEFAULT '0'::bigint,
+    aid bigint NOT NULL DEFAULT '0'::bigint,
+    CONSTRAINT "PK_c565ce731695d2756fb8e20421f" PRIMARY KEY (dist_tariff_id)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+

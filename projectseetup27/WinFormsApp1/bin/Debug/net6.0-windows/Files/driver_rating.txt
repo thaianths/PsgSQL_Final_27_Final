@@ -1,0 +1,19 @@
+CREATE TABLE IF NOT EXISTS public.driver_rating
+(
+    driver_rating_id bigint NOT NULL,
+    rating real NOT NULL DEFAULT '0'::real,
+    driver_id bigint NOT NULL DEFAULT '0'::bigint,
+    member_id bigint NOT NULL DEFAULT '0'::bigint,
+    request_id bigint NOT NULL DEFAULT '0'::bigint,
+    rating_option text[] COLLATE pg_catalog."default" NOT NULL,
+    comment character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    member_created bigint NOT NULL DEFAULT '0'::bigint,
+    member_updated bigint NOT NULL DEFAULT '0'::bigint,
+    created_at bigint NOT NULL DEFAULT '0'::bigint,
+    modified_at bigint NOT NULL DEFAULT '0'::bigint,
+    CONSTRAINT "PK_1db9d7c944117cce10b51192352" PRIMARY KEY (driver_rating_id)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;

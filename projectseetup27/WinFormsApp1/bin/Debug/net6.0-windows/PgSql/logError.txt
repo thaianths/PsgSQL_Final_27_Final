@@ -1,0 +1,205 @@
+Error 12/18/2023 11:29:05 AM : Npgsql.PostgresException (0x80004005): 42P04: database "client_schemaproduct1" already exists
+   at Npgsql.Internal.NpgsqlConnector.<ReadMessage>g__ReadMessageLong|233_0(NpgsqlConnector connector, Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult()
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior behavior, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior behavior, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteNonQuery(Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteNonQuery()
+   at WinFormsApp1.Helper.CreateDatabase(String sql, String connect) in C:\Users\SW24\source\repos\projectseetup26\WinFormsApp1\Helper.cs:line 84
+   at WinFormsApp1.Setting.CreateDatabase(String dbName) in C:\Users\SW24\source\repos\projectseetup26\WinFormsApp1\Setting.cs:line 481
+  Exception data:
+    Severity: ERROR
+    SqlState: 42P04
+    MessageText: database "client_schemaproduct1" already exists
+    File: dbcommands.c
+    Line: 523
+    Routine: createdb
+Error 12/18/2023 11:44:04 AM : Npgsql.PostgresException (0x80004005): 42601: syntax error at or near "-"
+
+POSITION: 48
+   at Npgsql.Internal.NpgsqlConnector.<ReadMessage>g__ReadMessageLong|233_0(NpgsqlConnector connector, Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult()
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior behavior, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior behavior, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteNonQuery(Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteNonQuery()
+   at WinFormsApp1.Helper.CreateDatabase(String sql, String connect) in C:\Users\SW24\source\repos\projectseetup26\WinFormsApp1\Helper.cs:line 84
+   at WinFormsApp1.Setting.CreateDatabase(String dbName) in C:\Users\SW24\source\repos\projectseetup26\WinFormsApp1\Setting.cs:line 481
+  Exception data:
+    Severity: ERROR
+    SqlState: 42601
+    MessageText: syntax error at or near "-"
+    Position: 48
+    File: scan.l
+    Line: 1180
+    Routine: scanner_yyerror
+Error 12/18/2023 11:44:20 AM : Npgsql.PostgresException (0x80004005): 42601: syntax error at or near "-"
+
+POSITION: 48
+   at Npgsql.Internal.NpgsqlConnector.<ReadMessage>g__ReadMessageLong|233_0(NpgsqlConnector connector, Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult()
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior behavior, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior behavior, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteNonQuery(Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteNonQuery()
+   at WinFormsApp1.Helper.CreateDatabase(String sql, String connect) in C:\Users\SW24\source\repos\projectseetup26\WinFormsApp1\Helper.cs:line 84
+   at WinFormsApp1.Setting.CreateDatabase(String dbName) in C:\Users\SW24\source\repos\projectseetup26\WinFormsApp1\Setting.cs:line 481
+  Exception data:
+    Severity: ERROR
+    SqlState: 42601
+    MessageText: syntax error at or near "-"
+    Position: 48
+    File: scan.l
+    Line: 1180
+    Routine: scanner_yyerror
+Error 12/18/2023 11:44:29 AM : Npgsql.PostgresException (0x80004005): 42601: syntax error at or near "-"
+
+POSITION: 48
+   at Npgsql.Internal.NpgsqlConnector.<ReadMessage>g__ReadMessageLong|233_0(NpgsqlConnector connector, Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult()
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior behavior, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior behavior, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteNonQuery(Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteNonQuery()
+   at WinFormsApp1.Helper.CreateDatabase(String sql, String connect) in C:\Users\SW24\source\repos\projectseetup26\WinFormsApp1\Helper.cs:line 84
+   at WinFormsApp1.Setting.CreateDatabase(String dbName) in C:\Users\SW24\source\repos\projectseetup26\WinFormsApp1\Setting.cs:line 481
+  Exception data:
+    Severity: ERROR
+    SqlState: 42601
+    MessageText: syntax error at or near "-"
+    Position: 48
+    File: scan.l
+    Line: 1180
+    Routine: scanner_yyerror
+Error 12/19/2023 11:14:17 AM : Npgsql.PostgresException (0x80004005): 42P04: database "client_schematest" already exists
+   at Npgsql.Internal.NpgsqlConnector.<ReadMessage>g__ReadMessageLong|233_0(NpgsqlConnector connector, Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult()
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior behavior, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior behavior, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteNonQuery(Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteNonQuery()
+   at WinFormsApp1.Helper.CreateDatabase(String sql, String connect) in C:\Users\SW24\source\repos\projectseetup26\WinFormsApp1\Helper.cs:line 84
+   at WinFormsApp1.Setting.CreateDatabase(String dbName) in C:\Users\SW24\source\repos\projectseetup26\WinFormsApp1\Setting.cs:line 481
+  Exception data:
+    Severity: ERROR
+    SqlState: 42P04
+    MessageText: database "client_schematest" already exists
+    File: dbcommands.c
+    Line: 523
+    Routine: createdb
+Error 12/19/2023 1:12:55 PM : System.IO.FileNotFoundException: Could not find file 'C:\Users\SW24\source\repos\projectseetup27\WinFormsApp1\bin\Debug\net6.0-windows\PgSql\TESTTT.xml'.
+File name: 'C:\Users\SW24\source\repos\projectseetup27\WinFormsApp1\bin\Debug\net6.0-windows\PgSql\TESTTT.xml'
+   at Microsoft.Win32.SafeHandles.SafeFileHandle.CreateFile(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options)
+   at Microsoft.Win32.SafeHandles.SafeFileHandle.Open(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize)
+   at System.IO.Strategies.OSFileStreamStrategy..ctor(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize)
+   at System.IO.Strategies.FileStreamHelpers.ChooseStrategyCore(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize)
+   at System.IO.Strategies.FileStreamHelpers.ChooseStrategy(FileStream fileStream, String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, Int64 preallocationSize)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   at WinFormsApp1.Helper.GetConfigServer[T](String path) in C:\Users\SW24\source\repos\projectseetup27\WinFormsApp1\Helper.cs:line 211
+   at WinFormsApp1.Setting.GetConfigServer[T](String path) in C:\Users\SW24\source\repos\projectseetup27\WinFormsApp1\Setting.cs:line 150
+   at WinFormsApp1.Setting.comboBox1_SelectedValueChanged(Object sender, EventArgs e) in C:\Users\SW24\source\repos\projectseetup27\WinFormsApp1\Setting.cs:line 1186
+Error 12/19/2023 1:14:43 PM : System.IO.FileNotFoundException: Could not find file 'C:\Users\SW24\source\repos\projectseetup27\WinFormsApp1\bin\Debug\net6.0-windows\PgSql\TETTTTT.xml'.
+File name: 'C:\Users\SW24\source\repos\projectseetup27\WinFormsApp1\bin\Debug\net6.0-windows\PgSql\TETTTTT.xml'
+   at Microsoft.Win32.SafeHandles.SafeFileHandle.CreateFile(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options)
+   at Microsoft.Win32.SafeHandles.SafeFileHandle.Open(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize)
+   at System.IO.Strategies.OSFileStreamStrategy..ctor(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize)
+   at System.IO.Strategies.FileStreamHelpers.ChooseStrategyCore(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize)
+   at System.IO.Strategies.FileStreamHelpers.ChooseStrategy(FileStream fileStream, String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, Int64 preallocationSize)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   at WinFormsApp1.Helper.GetConfigServer[T](String path) in C:\Users\SW24\source\repos\projectseetup27\WinFormsApp1\Helper.cs:line 211
+   at WinFormsApp1.Setting.GetConfigServer[T](String path) in C:\Users\SW24\source\repos\projectseetup27\WinFormsApp1\Setting.cs:line 150
+   at WinFormsApp1.Setting.comboBox1_SelectedValueChanged(Object sender, EventArgs e) in C:\Users\SW24\source\repos\projectseetup27\WinFormsApp1\Setting.cs:line 1186
+Error 12/19/2023 3:58:59 PM : System.IO.FileNotFoundException: Could not find file 'C:\Users\SW24\source\repos\projectseetup27\WinFormsApp1\bin\Debug\net6.0-windows\PgSql\FINAL.xml'.
+File name: 'C:\Users\SW24\source\repos\projectseetup27\WinFormsApp1\bin\Debug\net6.0-windows\PgSql\FINAL.xml'
+   at Microsoft.Win32.SafeHandles.SafeFileHandle.CreateFile(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options)
+   at Microsoft.Win32.SafeHandles.SafeFileHandle.Open(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize)
+   at System.IO.Strategies.OSFileStreamStrategy..ctor(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize)
+   at System.IO.Strategies.FileStreamHelpers.ChooseStrategyCore(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize)
+   at System.IO.Strategies.FileStreamHelpers.ChooseStrategy(FileStream fileStream, String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, Int64 preallocationSize)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   at WinFormsApp1.Helper.GetConfigServer[T](String path) in C:\Users\SW24\source\repos\projectseetup27\WinFormsApp1\Helper.cs:line 211
+   at WinFormsApp1.Setting.GetConfigServer[T](String path) in C:\Users\SW24\source\repos\projectseetup27\WinFormsApp1\Setting.cs:line 151
+   at WinFormsApp1.Setting.comboBox1_SelectedValueChanged(Object sender, EventArgs e) in C:\Users\SW24\source\repos\projectseetup27\WinFormsApp1\Setting.cs:line 1187
+Error 12/19/2023 4:01:42 PM : System.IO.FileNotFoundException: Could not find file 'C:\Users\SW24\source\repos\projectseetup27\WinFormsApp1\bin\Debug\net6.0-windows\PgSql\FINAL.xml'.
+File name: 'C:\Users\SW24\source\repos\projectseetup27\WinFormsApp1\bin\Debug\net6.0-windows\PgSql\FINAL.xml'
+   at Microsoft.Win32.SafeHandles.SafeFileHandle.CreateFile(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options)
+   at Microsoft.Win32.SafeHandles.SafeFileHandle.Open(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize)
+   at System.IO.Strategies.OSFileStreamStrategy..ctor(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize)
+   at System.IO.Strategies.FileStreamHelpers.ChooseStrategyCore(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize)
+   at System.IO.Strategies.FileStreamHelpers.ChooseStrategy(FileStream fileStream, String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, Int64 preallocationSize)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   at WinFormsApp1.Helper.GetConfigServer[T](String path) in C:\Users\SW24\source\repos\projectseetup27\WinFormsApp1\Helper.cs:line 211
+   at WinFormsApp1.Setting.GetConfigServer[T](String path) in C:\Users\SW24\source\repos\projectseetup27\WinFormsApp1\Setting.cs:line 151
+   at WinFormsApp1.Setting.comboBox1_SelectedValueChanged(Object sender, EventArgs e) in C:\Users\SW24\source\repos\projectseetup27\WinFormsApp1\Setting.cs:line 1187
+Error 12/19/2023 4:50:20 PM : Npgsql.PostgresException (0x80004005): 42P04: database "client_schema1" already exists
+   at Npgsql.Internal.NpgsqlConnector.<ReadMessage>g__ReadMessageLong|233_0(NpgsqlConnector connector, Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult()
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior behavior, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior behavior, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteNonQuery(Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteNonQuery()
+   at WinFormsApp1.Helper.CreateDatabase(String sql, String connect) in C:\Users\SW24\source\repos\projectseetup27\WinFormsApp1\Helper.cs:line 88
+   at WinFormsApp1.Setting.CreateDatabase(String dbName) in C:\Users\SW24\source\repos\projectseetup27\WinFormsApp1\Setting.cs:line 482
+  Exception data:
+    Severity: ERROR
+    SqlState: 42P04
+    MessageText: database "client_schema1" already exists
+    File: dbcommands.c
+    Line: 521
+    Routine: createdb
+Error 12/20/2023 8:24:01 AM : System.IO.FileNotFoundException: Could not find file 'C:\Users\SW24\source\repos\projectseetup27\WinFormsApp1\bin\Debug\net6.0-windows\PgSql\pro2.xml'.
+File name: 'C:\Users\SW24\source\repos\projectseetup27\WinFormsApp1\bin\Debug\net6.0-windows\PgSql\pro2.xml'
+   at Microsoft.Win32.SafeHandles.SafeFileHandle.CreateFile(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options)
+   at Microsoft.Win32.SafeHandles.SafeFileHandle.Open(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize)
+   at System.IO.Strategies.OSFileStreamStrategy..ctor(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize)
+   at System.IO.Strategies.FileStreamHelpers.ChooseStrategyCore(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize)
+   at System.IO.Strategies.FileStreamHelpers.ChooseStrategy(FileStream fileStream, String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, Int64 preallocationSize)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   at WinFormsApp1.Helper.GetConfigServer[T](String path) in C:\Users\SW24\source\repos\projectseetup27\WinFormsApp1\Helper.cs:line 215
+   at WinFormsApp1.Setting.GetConfigServer[T](String path) in C:\Users\SW24\source\repos\projectseetup27\WinFormsApp1\Setting.cs:line 151
+   at WinFormsApp1.Setting.comboBox1_SelectedValueChanged(Object sender, EventArgs e) in C:\Users\SW24\source\repos\projectseetup27\WinFormsApp1\Setting.cs:line 1187
+Error 12/20/2023 8:26:17 AM : System.IO.FileNotFoundException: Could not find file 'C:\Users\SW24\source\repos\projectseetup27\WinFormsApp1\bin\Debug\net6.0-windows\PgSql\pro3.xml'.
+File name: 'C:\Users\SW24\source\repos\projectseetup27\WinFormsApp1\bin\Debug\net6.0-windows\PgSql\pro3.xml'
+   at Microsoft.Win32.SafeHandles.SafeFileHandle.CreateFile(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options)
+   at Microsoft.Win32.SafeHandles.SafeFileHandle.Open(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize)
+   at System.IO.Strategies.OSFileStreamStrategy..ctor(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize)
+   at System.IO.Strategies.FileStreamHelpers.ChooseStrategyCore(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize)
+   at System.IO.Strategies.FileStreamHelpers.ChooseStrategy(FileStream fileStream, String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, Int64 preallocationSize)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   at WinFormsApp1.Helper.GetConfigServer[T](String path) in C:\Users\SW24\source\repos\projectseetup27\WinFormsApp1\Helper.cs:line 215
+   at WinFormsApp1.Setting.GetConfigServer[T](String path) in C:\Users\SW24\source\repos\projectseetup27\WinFormsApp1\Setting.cs:line 151
+   at WinFormsApp1.Setting.comboBox1_SelectedValueChanged(Object sender, EventArgs e) in C:\Users\SW24\source\repos\projectseetup27\WinFormsApp1\Setting.cs:line 1187
+Error 12/20/2023 8:28:54 AM : System.IO.FileNotFoundException: Could not find file 'C:\Users\SW24\source\repos\projectseetup27\WinFormsApp1\bin\Debug\net6.0-windows\PgSql\pro4.xml'.
+File name: 'C:\Users\SW24\source\repos\projectseetup27\WinFormsApp1\bin\Debug\net6.0-windows\PgSql\pro4.xml'
+   at Microsoft.Win32.SafeHandles.SafeFileHandle.CreateFile(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options)
+   at Microsoft.Win32.SafeHandles.SafeFileHandle.Open(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize)
+   at System.IO.Strategies.OSFileStreamStrategy..ctor(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize)
+   at System.IO.Strategies.FileStreamHelpers.ChooseStrategyCore(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize)
+   at System.IO.Strategies.FileStreamHelpers.ChooseStrategy(FileStream fileStream, String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, Int64 preallocationSize)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   at WinFormsApp1.Helper.GetConfigServer[T](String path) in C:\Users\SW24\source\repos\projectseetup27\WinFormsApp1\Helper.cs:line 215
+   at WinFormsApp1.Setting.GetConfigServer[T](String path) in C:\Users\SW24\source\repos\projectseetup27\WinFormsApp1\Setting.cs:line 151
+   at WinFormsApp1.Setting.comboBox1_SelectedValueChanged(Object sender, EventArgs e) in C:\Users\SW24\source\repos\projectseetup27\WinFormsApp1\Setting.cs:line 1187
+Error 12/20/2023 8:36:32 AM : System.IO.FileNotFoundException: Could not find file 'C:\Users\SW24\source\repos\projectseetup27\WinFormsApp1\bin\Debug\net6.0-windows\PgSql\pro5.xml'.
+File name: 'C:\Users\SW24\source\repos\projectseetup27\WinFormsApp1\bin\Debug\net6.0-windows\PgSql\pro5.xml'
+   at Microsoft.Win32.SafeHandles.SafeFileHandle.CreateFile(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options)
+   at Microsoft.Win32.SafeHandles.SafeFileHandle.Open(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize)
+   at System.IO.Strategies.OSFileStreamStrategy..ctor(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize)
+   at System.IO.Strategies.FileStreamHelpers.ChooseStrategyCore(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize)
+   at System.IO.Strategies.FileStreamHelpers.ChooseStrategy(FileStream fileStream, String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, Int64 preallocationSize)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   at WinFormsApp1.Helper.GetConfigServer[T](String path) in C:\Users\SW24\source\repos\projectseetup27\WinFormsApp1\Helper.cs:line 215
+   at WinFormsApp1.Setting.GetConfigServer[T](String path) in C:\Users\SW24\source\repos\projectseetup27\WinFormsApp1\Setting.cs:line 151
+   at WinFormsApp1.Setting.comboBox1_SelectedValueChanged(Object sender, EventArgs e) in C:\Users\SW24\source\repos\projectseetup27\WinFormsApp1\Setting.cs:line 1187

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModelConnect xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ip_cnn_customer_Serialize>192.168.1.22</ip_cnn_customer_Serialize>
+  <Port_cnn_customer_Serialize>5732</Port_cnn_customer_Serialize>
+  <Id_cnn_customer_Serialize>postgres</Id_cnn_customer_Serialize>
+  <Password_cnn_customer_Serialize>12345678</Password_cnn_customer_Serialize>
+  <Database_cnn_Serialize>dev24_source</Database_cnn_Serialize>
+  <ip_cnn_Serialize>192.168.1.22</ip_cnn_Serialize>
+  <Port_cnn_Serialize>5732</Port_cnn_Serialize>
+  <Id_cnn_Serialize>postgres</Id_cnn_Serialize>
+  <Password_cnn_Serialize>12345678</Password_cnn_Serialize>
+</ModelConnect>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfModelProduct xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ModelProduct>
+    <tablename>base_workingtime_F</tablename>
+    <type>table</type>
+  </ModelProduct>
+  <ModelProduct>
+    <tablename>child_menu_F</tablename>
+    <type>table</type>
+  </ModelProduct>
+  <ModelProduct>
+    <tablename>cms_notification_F</tablename>
+    <type>table</type>
+  </ModelProduct>
+</ArrayOfModelProduct>

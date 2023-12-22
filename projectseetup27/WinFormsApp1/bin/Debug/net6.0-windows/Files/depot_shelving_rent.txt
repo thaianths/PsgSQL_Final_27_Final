@@ -1,0 +1,21 @@
+CREATE TABLE IF NOT EXISTS public.depot_shelving_rent
+(
+    depot_sherving_rent_id bigint NOT NULL,
+    depot_id bigint NOT NULL DEFAULT '0'::bigint,
+    shelving_bin_id bigint NOT NULL DEFAULT '0'::bigint,
+    request_provider_id bigint NOT NULL DEFAULT '0'::bigint,
+    service_provider_id bigint NOT NULL DEFAULT '0'::bigint,
+    from_time bigint NOT NULL DEFAULT '0'::bigint,
+    to_time bigint NOT NULL DEFAULT '0'::bigint,
+    member_created bigint NOT NULL DEFAULT '0'::bigint,
+    member_updated bigint NOT NULL DEFAULT '0'::bigint,
+    created_at bigint NOT NULL DEFAULT '0'::bigint,
+    modified_at bigint NOT NULL DEFAULT '0'::bigint,
+    CONSTRAINT "PK_d24bbede0c614d86a19a7636b68" PRIMARY KEY (depot_sherving_rent_id),
+    CONSTRAINT "UQ_e0be2b029630972b8c383039f4a" UNIQUE (depot_id, shelving_bin_id, service_provider_id, request_provider_id)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+

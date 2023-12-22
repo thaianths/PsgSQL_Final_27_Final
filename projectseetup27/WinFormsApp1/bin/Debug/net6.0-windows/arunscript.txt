@@ -1,0 +1,1785 @@
+CREATE TABLE IF NOT EXISTS public.area
+(
+    portal_id bigint DEFAULT '0'::bigint,
+    portal_code character varying COLLATE pg_catalog."default" DEFAULT ''::character varying,
+    customer_id bigint DEFAULT '0'::bigint,
+    client_id bigint NOT NULL DEFAULT '0'::bigint,
+    country_prefix character varying COLLATE pg_catalog."default" DEFAULT '+84'::character varying,
+    member_created bigint DEFAULT '0'::bigint,
+    member_updated bigint DEFAULT '0'::bigint,
+    status smallint NOT NULL DEFAULT '1'::smallint,
+    created_at bigint DEFAULT '0'::bigint,
+    modified_at bigint DEFAULT '0'::bigint,
+    aid bigint NOT NULL,
+    cid bigint NOT NULL DEFAULT '84'::bigint,
+    aname character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    ashort character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    akey text[] COLLATE pg_catalog."default" NOT NULL,
+    provinces jsonb NOT NULL DEFAULT '[]'::jsonb,
+    CONSTRAINT "PK_71e5b4aaf2e17aa710cd76f1d98" PRIMARY KEY (aid),
+    CONSTRAINT "UQ_71e5b4aaf2e17aa710cd76f1d98" UNIQUE (aid)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+
+
+CREATE TABLE IF NOT EXISTS public.avigo_offer
+(
+    avigo_offer_id character varying COLLATE pg_catalog."default" NOT NULL,
+    driver_name character varying COLLATE pg_catalog."default" NOT NULL,
+    driver_phone character varying COLLATE pg_catalog."default" NOT NULL,
+    kind_of_vehicle integer NOT NULL,
+    registration_number character varying COLLATE pg_catalog."default" NOT NULL,
+    class_of_vehicle character varying COLLATE pg_catalog."default" NOT NULL,
+    estimated_time_of_standby bigint NOT NULL DEFAULT '0'::bigint,
+    addr_of_standby character varying COLLATE pg_catalog."default" NOT NULL,
+    latitude_of_standby_addr real NOT NULL DEFAULT '0'::real,
+    longitude_of_standby_addr real NOT NULL DEFAULT '0'::real,
+    "timestamp" bigint NOT NULL DEFAULT '0'::bigint,
+    status smallint NOT NULL DEFAULT '0'::smallint,
+    created_at bigint NOT NULL DEFAULT '0'::bigint,
+    driver_id character varying COLLATE pg_catalog."default" NOT NULL,
+    offer_id bigint NOT NULL DEFAULT '0'::bigint,
+    modified_at bigint NOT NULL DEFAULT '0'::bigint,
+    confirm_time bigint NOT NULL DEFAULT '0'::bigint,
+    request_id bigint NOT NULL DEFAULT '0'::bigint,
+    trip_id character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    CONSTRAINT "PK_180617173c3109a375a6435a010" PRIMARY KEY (avigo_offer_id),
+    CONSTRAINT "UQ_180617173c3109a375a6435a010" UNIQUE (avigo_offer_id)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+
+
+
+
+CREATE TABLE IF NOT EXISTS public.base_group_services
+(
+    portal_id bigint DEFAULT '0'::bigint,
+    portal_code character varying COLLATE pg_catalog."default" DEFAULT ''::character varying,
+    customer_id bigint DEFAULT '0'::bigint,
+    client_id bigint NOT NULL DEFAULT '0'::bigint,
+    country_prefix character varying COLLATE pg_catalog."default" DEFAULT '+84'::character varying,
+    member_created bigint DEFAULT '0'::bigint,
+    member_updated bigint DEFAULT '0'::bigint,
+    status smallint NOT NULL DEFAULT '1'::smallint,
+    created_at bigint DEFAULT '0'::bigint,
+    modified_at bigint DEFAULT '0'::bigint,
+    group_service_id bigint NOT NULL,
+    group_service_name character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    service_kind smallint NOT NULL DEFAULT '1'::smallint,
+    i18n character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    visible boolean NOT NULL DEFAULT true,
+    CONSTRAINT "PK_873b6e5f728a6ec6ff0bb2d410a" PRIMARY KEY (group_service_id),
+    CONSTRAINT "UQ_873b6e5f728a6ec6ff0bb2d410a" UNIQUE (group_service_id)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+
+
+CREATE TABLE IF NOT EXISTS public.access_right
+(
+    portal_id bigint DEFAULT '0'::bigint,
+    portal_code character varying COLLATE pg_catalog."default" DEFAULT ''::character varying,
+    customer_id bigint DEFAULT '0'::bigint,
+    client_id bigint NOT NULL DEFAULT '0'::bigint,
+    country_prefix character varying COLLATE pg_catalog."default" DEFAULT '+84'::character varying,
+    member_created bigint DEFAULT '0'::bigint,
+    member_updated bigint DEFAULT '0'::bigint,
+    status smallint NOT NULL DEFAULT '1'::smallint,
+    created_at bigint DEFAULT '0'::bigint,
+    modified_at bigint DEFAULT '0'::bigint,
+    access_right_id bigint NOT NULL,
+    i18n character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    subject character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    action character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    child_id bigint NOT NULL DEFAULT '0'::bigint,
+    parent_id bigint NOT NULL DEFAULT '0'::bigint,
+    is_mobile boolean NOT NULL DEFAULT false,
+    other_child character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    CONSTRAINT "PK_7405cd463971a2fb5f75cae3623" PRIMARY KEY (access_right_id),
+    CONSTRAINT "UQ_7405cd463971a2fb5f75cae3623" UNIQUE (access_right_id)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+
+
+CREATE TABLE IF NOT EXISTS public.base_packagings
+(
+    portal_id bigint DEFAULT '0'::bigint,
+    portal_code character varying COLLATE pg_catalog."default" DEFAULT ''::character varying,
+    customer_id bigint DEFAULT '0'::bigint,
+    client_id bigint NOT NULL DEFAULT '0'::bigint,
+    country_prefix character varying COLLATE pg_catalog."default" DEFAULT '+84'::character varying,
+    member_created bigint DEFAULT '0'::bigint,
+    member_updated bigint DEFAULT '0'::bigint,
+    status smallint NOT NULL DEFAULT '1'::smallint,
+    created_at bigint DEFAULT '0'::bigint,
+    modified_at bigint DEFAULT '0'::bigint,
+    handling_unit_id bigint NOT NULL,
+    group_id bigint NOT NULL,
+    plength real NOT NULL DEFAULT '0'::real,
+    pheight real NOT NULL DEFAULT '0'::real,
+    pwidth real NOT NULL DEFAULT '0'::real,
+    min_weight real NOT NULL DEFAULT '0'::real,
+    max_weight real NOT NULL DEFAULT '0'::real,
+    volume real NOT NULL DEFAULT '0'::real,
+    units character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    units_weight character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    package_name character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    group_name character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    "desc" character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    CONSTRAINT "PK_5e68625a8cd58e08764cad90f91" PRIMARY KEY (handling_unit_id),
+    CONSTRAINT "UQ_5e68625a8cd58e08764cad90f91" UNIQUE (handling_unit_id)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+
+CREATE TABLE IF NOT EXISTS public.base_services
+(
+    portal_id bigint DEFAULT '0'::bigint,
+    portal_code character varying COLLATE pg_catalog."default" DEFAULT ''::character varying,
+    customer_id bigint DEFAULT '0'::bigint,
+    client_id bigint NOT NULL DEFAULT '0'::bigint,
+    country_prefix character varying COLLATE pg_catalog."default" DEFAULT '+84'::character varying,
+    member_created bigint DEFAULT '0'::bigint,
+    member_updated bigint DEFAULT '0'::bigint,
+    status smallint NOT NULL DEFAULT '1'::smallint,
+    created_at bigint DEFAULT '0'::bigint,
+    modified_at bigint DEFAULT '0'::bigint,
+    service_id bigint NOT NULL,
+    service_name character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    service_kind smallint NOT NULL DEFAULT '1'::smallint,
+    i18n character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    visible boolean NOT NULL DEFAULT true,
+    kind_of_tariff smallint NOT NULL DEFAULT '0'::smallint,
+    unit_of_basic_tariff smallint NOT NULL DEFAULT '1'::smallint,
+    unit_name character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    unit_of_service_tariff smallint DEFAULT '-1'::smallint,
+    unit_service_name character varying COLLATE pg_catalog."default" DEFAULT ''::character varying,
+    show_dimension smallint NOT NULL DEFAULT '1'::smallint,
+    group_packaging character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    CONSTRAINT "PK_25b0b4cef3ad3c9176bdad7f739" PRIMARY KEY (service_id),
+    CONSTRAINT "UQ_25b0b4cef3ad3c9176bdad7f739" UNIQUE (service_id)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+
+
+
+
+CREATE TABLE IF NOT EXISTS public.base_services_extra
+(
+    portal_id bigint DEFAULT '0'::bigint,
+    portal_code character varying COLLATE pg_catalog."default" DEFAULT ''::character varying,
+    customer_id bigint DEFAULT '0'::bigint,
+    client_id bigint NOT NULL DEFAULT '0'::bigint,
+    country_prefix character varying COLLATE pg_catalog."default" DEFAULT '+84'::character varying,
+    member_created bigint DEFAULT '0'::bigint,
+    member_updated bigint DEFAULT '0'::bigint,
+    status smallint NOT NULL DEFAULT '1'::smallint,
+    created_at bigint DEFAULT '0'::bigint,
+    modified_at bigint DEFAULT '0'::bigint,
+    extra_service_id bigint NOT NULL,
+    extra_service_name character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    service_kind smallint[] NOT NULL DEFAULT '{}'::smallint[],
+    i18n character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    visible boolean NOT NULL DEFAULT true,
+    unit_of_basic_tariff smallint NOT NULL DEFAULT '1'::smallint,
+    unit_name character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    field_of_tariff character varying COLLATE pg_catalog."default" DEFAULT ''::character varying,
+    is_whole smallint NOT NULL DEFAULT '0'::smallint,
+    unit_of_service_tariff smallint DEFAULT '-1'::smallint,
+    unit_service_name character varying COLLATE pg_catalog."default" DEFAULT ''::character varying,
+    show_dimension smallint NOT NULL DEFAULT '1'::smallint,
+    show_check boolean NOT NULL DEFAULT false,
+    mandatory boolean NOT NULL DEFAULT false,
+    field_fee character varying COLLATE pg_catalog."default" DEFAULT ''::character varying,
+    CONSTRAINT "PK_718f77eb2cec4899642ffb58934" PRIMARY KEY (extra_service_id),
+    CONSTRAINT "UQ_718f77eb2cec4899642ffb58934" UNIQUE (extra_service_id)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+
+
+
+CREATE TABLE IF NOT EXISTS public.base_vehicles
+(
+    portal_id bigint DEFAULT '0'::bigint,
+    portal_code character varying COLLATE pg_catalog."default" DEFAULT ''::character varying,
+    customer_id bigint DEFAULT '0'::bigint,
+    client_id bigint NOT NULL DEFAULT '0'::bigint,
+    country_prefix character varying COLLATE pg_catalog."default" DEFAULT '+84'::character varying,
+    member_created bigint DEFAULT '0'::bigint,
+    member_updated bigint DEFAULT '0'::bigint,
+    status smallint NOT NULL DEFAULT '1'::smallint,
+    created_at bigint DEFAULT '0'::bigint,
+    modified_at bigint DEFAULT '0'::bigint,
+    resource_id bigint NOT NULL,
+    cont_weight real NOT NULL DEFAULT '0'::real,
+    handling_unit_ids character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    vheight real NOT NULL DEFAULT '0'::real,
+    vlength real NOT NULL DEFAULT '0'::real,
+    vwidth real NOT NULL DEFAULT '0'::real,
+    max_weight real NOT NULL DEFAULT '0'::real,
+    name character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    "group" bigint NOT NULL DEFAULT '0'::bigint,
+    group_name character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    CONSTRAINT "PK_65f45b2c48d576c64ab3c690838" PRIMARY KEY (resource_id),
+    CONSTRAINT "UQ_65f45b2c48d576c64ab3c690838" UNIQUE (resource_id)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+
+
+CREATE TABLE IF NOT EXISTS public.child_menu
+(
+    portal_id bigint DEFAULT '0'::bigint,
+    portal_code character varying COLLATE pg_catalog."default" DEFAULT ''::character varying,
+    customer_id bigint DEFAULT '0'::bigint,
+    client_id bigint NOT NULL DEFAULT '0'::bigint,
+    country_prefix character varying COLLATE pg_catalog."default" DEFAULT '+84'::character varying,
+    member_created bigint DEFAULT '0'::bigint,
+    member_updated bigint DEFAULT '0'::bigint,
+    status smallint NOT NULL DEFAULT '1'::smallint,
+    created_at bigint DEFAULT '0'::bigint,
+    modified_at bigint DEFAULT '0'::bigint,
+    child_id bigint NOT NULL,
+    path character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    name character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    meta jsonb NOT NULL DEFAULT '{}'::jsonb,
+    parent_id bigint NOT NULL DEFAULT '0'::bigint,
+    is_mobile boolean NOT NULL DEFAULT false,
+    CONSTRAINT "PK_a2be17f32379f42236bc0dbacbc" PRIMARY KEY (child_id),
+    CONSTRAINT "UQ_a2be17f32379f42236bc0dbacbc" UNIQUE (child_id)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+
+
+
+
+
+
+CREATE TABLE IF NOT EXISTS public.clients
+(
+    client_id bigint NOT NULL,
+    type smallint NOT NULL DEFAULT '0'::smallint,
+    group_id character varying COLLATE pg_catalog."default" NOT NULL DEFAULT '-1'::character varying,
+    uid character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    phone character varying COLLATE pg_catalog."default" NOT NULL,
+    email character varying COLLATE pg_catalog."default" NOT NULL,
+    name character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    title character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    contact_name character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    department smallint NOT NULL DEFAULT '0'::smallint,
+    company_name character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    bank_account character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    business_status smallint NOT NULL DEFAULT '0'::smallint,
+    business_license character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    demand character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    address character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    tax_id character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    images jsonb NOT NULL DEFAULT '[]'::jsonb,
+    portal_id bigint NOT NULL,
+    portal_code character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    country_prefix character varying COLLATE pg_catalog."default" NOT NULL DEFAULT '+84'::character varying,
+    member_created bigint NOT NULL DEFAULT '0'::bigint,
+    status smallint NOT NULL DEFAULT '1'::smallint,
+    created_at bigint NOT NULL DEFAULT '0'::bigint,
+    modified_at bigint NOT NULL DEFAULT '0'::bigint,
+    member_updated bigint NOT NULL DEFAULT '0'::bigint,
+    profit_margin real NOT NULL DEFAULT '0'::real,
+    min_order_per_mon bigint NOT NULL DEFAULT '0'::bigint,
+    CONSTRAINT "PK_49e91f1e368e3f760789e7764aa" PRIMARY KEY (client_id),
+    CONSTRAINT "UQ_49e91f1e368e3f760789e7764aa" UNIQUE (client_id)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+
+
+
+
+
+CREATE TABLE IF NOT EXISTS public.cms_notification
+(
+    cms_notification_id bigint NOT NULL,
+    client_id bigint NOT NULL DEFAULT '0'::bigint,
+    member_id bigint NOT NULL DEFAULT '0'::bigint,
+    message character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    title character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    type character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    status smallint NOT NULL DEFAULT '0'::smallint,
+    created_at bigint NOT NULL DEFAULT '0'::bigint,
+    CONSTRAINT "PK_120fb2cc1d8da3eaa333d2d96b5" PRIMARY KEY (cms_notification_id),
+    CONSTRAINT "UQ_120fb2cc1d8da3eaa333d2d96b5" UNIQUE (cms_notification_id)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+
+
+
+CREATE TABLE IF NOT EXISTS public.customers
+(
+    customer_id bigint NOT NULL,
+    group_id character varying COLLATE pg_catalog."default" NOT NULL DEFAULT '-1'::character varying,
+    uid character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    phone character varying COLLATE pg_catalog."default" NOT NULL,
+    email character varying COLLATE pg_catalog."default" NOT NULL,
+    name character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    title character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    contact_name character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    department smallint NOT NULL DEFAULT '0'::smallint,
+    company_name character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    bank_account character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    business_status smallint NOT NULL DEFAULT '0'::smallint,
+    business_license character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    demand character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    address character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    tax_id character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    images jsonb NOT NULL DEFAULT '[]'::jsonb,
+    portal_id bigint NOT NULL,
+    portal_code character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    client_id bigint NOT NULL DEFAULT '0'::bigint,
+    country_prefix character varying COLLATE pg_catalog."default" NOT NULL DEFAULT '+84'::character varying,
+    member_created bigint NOT NULL DEFAULT '0'::bigint,
+    member_updated bigint NOT NULL DEFAULT '0'::bigint,
+    status smallint NOT NULL DEFAULT '1'::smallint,
+    created_at bigint NOT NULL DEFAULT '0'::bigint,
+    modified_at bigint NOT NULL DEFAULT '0'::bigint,
+    CONSTRAINT "PK_6c444ce6637f2c1d71c3cf136c1" PRIMARY KEY (customer_id),
+    CONSTRAINT "UQ_6c444ce6637f2c1d71c3cf136c1" UNIQUE (customer_id)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+
+
+
+CREATE TABLE IF NOT EXISTS public.depot_addresspool
+(
+    portal_id bigint DEFAULT '0'::bigint,
+    portal_code character varying COLLATE pg_catalog."default" DEFAULT ''::character varying,
+    customer_id bigint DEFAULT '0'::bigint,
+    client_id bigint NOT NULL DEFAULT '0'::bigint,
+    country_prefix character varying COLLATE pg_catalog."default" DEFAULT '+84'::character varying,
+    member_created bigint DEFAULT '0'::bigint,
+    member_updated bigint DEFAULT '0'::bigint,
+    status smallint NOT NULL DEFAULT '1'::smallint,
+    created_at bigint DEFAULT '0'::bigint,
+    modified_at bigint DEFAULT '0'::bigint,
+    addr_id bigint NOT NULL,
+    request_provider_id bigint NOT NULL DEFAULT '0'::bigint,
+    contact_name character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    addr character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    phone character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    lat real NOT NULL DEFAULT '0'::real,
+    lon real NOT NULL DEFAULT '0'::real,
+    is_default boolean NOT NULL DEFAULT false,
+    pick bigint NOT NULL DEFAULT '0'::bigint,
+    drop bigint NOT NULL DEFAULT '0'::bigint,
+    kind smallint NOT NULL DEFAULT '0'::smallint,
+    CONSTRAINT "PK_6bbe0ff87561bf297771ca5bf8f" PRIMARY KEY (addr_id),
+    CONSTRAINT "UQ_6bbe0ff87561bf297771ca5bf8f" UNIQUE (addr_id)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+
+
+
+
+
+CREATE TABLE IF NOT EXISTS public.depot_collection_orderpool
+(
+    portal_id bigint DEFAULT '0'::bigint,
+    portal_code character varying COLLATE pg_catalog."default" DEFAULT ''::character varying,
+    customer_id bigint DEFAULT '0'::bigint,
+    client_id bigint NOT NULL DEFAULT '0'::bigint,
+    country_prefix character varying COLLATE pg_catalog."default" DEFAULT '+84'::character varying,
+    member_created bigint DEFAULT '0'::bigint,
+    member_updated bigint DEFAULT '0'::bigint,
+    status smallint NOT NULL DEFAULT '1'::smallint,
+    created_at bigint DEFAULT '0'::bigint,
+    modified_at bigint DEFAULT '0'::bigint,
+    collection_order_id bigint NOT NULL,
+    request_provider_id bigint NOT NULL DEFAULT '0'::bigint,
+    po_code character varying COLLATE pg_catalog."default" NOT NULL,
+    note character varying COLLATE pg_catalog."default" NOT NULL,
+    kind_ofcollection character varying COLLATE pg_catalog."default" NOT NULL DEFAULT 'purchase_order'::character varying,
+    CONSTRAINT "PK_f80a409793c038cee2748e0445c" PRIMARY KEY (collection_order_id),
+    CONSTRAINT "UQ_1c78224533ea04a6dbe342cc9cc" UNIQUE (po_code),
+    CONSTRAINT "UQ_9a25d6cfb754abd301a0685b624" UNIQUE (collection_order_id, request_provider_id)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+
+
+
+
+CREATE TABLE IF NOT EXISTS public.depot_requestpool
+(
+    portal_id bigint DEFAULT '0'::bigint,
+    portal_code character varying COLLATE pg_catalog."default" DEFAULT ''::character varying,
+    customer_id bigint DEFAULT '0'::bigint,
+    client_id bigint NOT NULL DEFAULT '0'::bigint,
+    depot_request_provider_id bigint NOT NULL DEFAULT '0'::bigint,
+    depot_request_id bigint NOT NULL,
+    sequence_id smallint NOT NULL DEFAULT '1'::smallint,
+    transport_id character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    collection_order_id bigint NOT NULL DEFAULT '0'::bigint,
+    collection_item_id bigint NOT NULL DEFAULT '0'::bigint,
+    sender_phone character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    sender_name character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    pickup_lat real NOT NULL DEFAULT '0'::real,
+    pickup_lon real NOT NULL DEFAULT '0'::real,
+    pickup_address character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    pickup_time bigint NOT NULL DEFAULT '0'::bigint,
+    receiver_phone character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    receiver_name character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    drop_lat real NOT NULL DEFAULT '0'::real,
+    drop_lon real NOT NULL DEFAULT '0'::real,
+    drop_address character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    request_type smallint NOT NULL DEFAULT '1'::smallint,
+    distance real NOT NULL DEFAULT '0'::real,
+    package_name character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    count_of_parcels smallint NOT NULL DEFAULT '1'::smallint,
+    rlength real NOT NULL DEFAULT '0'::real,
+    rwidth real NOT NULL DEFAULT '0'::real,
+    rheight real NOT NULL DEFAULT '0'::real,
+    rweight real NOT NULL DEFAULT '0'::real,
+    rvolume real NOT NULL DEFAULT '0'::real,
+    handling_unit_id bigint NOT NULL DEFAULT '0'::bigint,
+    note character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    offer_id bigint NOT NULL DEFAULT '0'::bigint,
+    is_insurance boolean NOT NULL DEFAULT false,
+    member_created bigint DEFAULT '0'::bigint,
+    member_updated bigint DEFAULT '0'::bigint,
+    status smallint NOT NULL DEFAULT '1'::smallint,
+    created_at bigint DEFAULT '0'::bigint,
+    modified_at bigint DEFAULT '0'::bigint,
+    basegood_id bigint NOT NULL DEFAULT '0'::bigint,
+    country_prefix character varying COLLATE pg_catalog."default" DEFAULT '+84'::character varying,
+    reason character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    packaging_unit_id smallint NOT NULL DEFAULT '1'::smallint,
+    delivery_mode bigint NOT NULL DEFAULT '0'::bigint,
+    depot_id bigint NOT NULL DEFAULT '0'::bigint,
+    CONSTRAINT depot_depot_requestpool_pkey PRIMARY KEY (depot_request_id),
+    CONSTRAINT "UQ_25501dabb3e20e5aaf1026b3e0c" UNIQUE (portal_id, client_id, depot_request_id, transport_id)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+
+
+
+CREATE TABLE IF NOT EXISTS public.depot_shelving_bin_system
+(
+    client_id bigint NOT NULL DEFAULT '0'::bigint,
+    service_provider_id bigint NOT NULL DEFAULT '0'::bigint,
+    depot_id bigint NOT NULL DEFAULT '0'::bigint,
+    shelving_bin_id bigint NOT NULL,
+    shelving_bin_name character varying COLLATE pg_catalog."default" NOT NULL,
+    shelving_bin_address character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    shelving_bin_handling_unit_ids character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    shelving_bin_specify character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    shelving_bin_status character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    shelving_bin_polygon character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    shelving_bin_length real NOT NULL DEFAULT '0.001'::real,
+    shelving_bin_width real NOT NULL DEFAULT '0'::real,
+    shelving_bin_hight real NOT NULL DEFAULT '0'::real,
+    shelving_bin_maxweight real NOT NULL DEFAULT '0'::real,
+    longitude real NOT NULL DEFAULT '0'::real,
+    z_position real NOT NULL DEFAULT '0'::real,
+    freespace real NOT NULL DEFAULT '0'::real,
+    reserved_space real NOT NULL DEFAULT '0'::real,
+    latitude real NOT NULL DEFAULT '0'::real,
+    area_name character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    CONSTRAINT depot_shelving_bin_system_pkey PRIMARY KEY (shelving_bin_id)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+
+
+
+
+
+
+CREATE TABLE IF NOT EXISTS public.depot_shelving_rent
+(
+    depot_sherving_rent_id bigint NOT NULL,
+    depot_id bigint NOT NULL DEFAULT '0'::bigint,
+    shelving_bin_id bigint NOT NULL DEFAULT '0'::bigint,
+    request_provider_id bigint NOT NULL DEFAULT '0'::bigint,
+    service_provider_id bigint NOT NULL DEFAULT '0'::bigint,
+    from_time bigint NOT NULL DEFAULT '0'::bigint,
+    to_time bigint NOT NULL DEFAULT '0'::bigint,
+    member_created bigint NOT NULL DEFAULT '0'::bigint,
+    member_updated bigint NOT NULL DEFAULT '0'::bigint,
+    created_at bigint NOT NULL DEFAULT '0'::bigint,
+    modified_at bigint NOT NULL DEFAULT '0'::bigint,
+    CONSTRAINT "PK_d24bbede0c614d86a19a7636b68" PRIMARY KEY (depot_sherving_rent_id),
+    CONSTRAINT "UQ_e0be2b029630972b8c383039f4a" UNIQUE (depot_id, shelving_bin_id, service_provider_id, request_provider_id)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+
+
+
+CREATE TABLE IF NOT EXISTS public.depot_warehouse_layout_plan
+(
+    client_id bigint NOT NULL,
+    service_provider_id bigint NOT NULL,
+    depot_id bigint NOT NULL,
+    area_id character varying COLLATE pg_catalog."default" NOT NULL,
+    area_name character varying COLLATE pg_catalog."default",
+    area_address character varying COLLATE pg_catalog."default",
+    area_size_inm2 character varying COLLATE pg_catalog."default",
+    area_handling_unit_ids character varying COLLATE pg_catalog."default",
+    ares_polygon_id character varying COLLATE pg_catalog."default",
+    area_status character varying COLLATE pg_catalog."default" NOT NULL,
+    CONSTRAINT depot_warehouse_layout_plan_pkey PRIMARY KEY (client_id, service_provider_id, depot_id, area_id)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+
+
+CREATE TABLE IF NOT EXISTS public.district
+(
+    portal_id bigint DEFAULT '0'::bigint,
+    portal_code character varying COLLATE pg_catalog."default" DEFAULT ''::character varying,
+    customer_id bigint DEFAULT '0'::bigint,
+    client_id bigint NOT NULL DEFAULT '0'::bigint,
+    country_prefix character varying COLLATE pg_catalog."default" DEFAULT '+84'::character varying,
+    member_created bigint DEFAULT '0'::bigint,
+    member_updated bigint DEFAULT '0'::bigint,
+    status smallint NOT NULL DEFAULT '1'::smallint,
+    created_at bigint DEFAULT '0'::bigint,
+    modified_at bigint DEFAULT '0'::bigint,
+    did bigint NOT NULL,
+    dname character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    dshort character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    dkey text[] COLLATE pg_catalog."default" NOT NULL,
+    cid bigint NOT NULL DEFAULT '84'::bigint,
+    pid bigint NOT NULL DEFAULT '84'::bigint,
+    pname character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    pshort character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    pkey text[] COLLATE pg_catalog."default" NOT NULL,
+    wards jsonb NOT NULL DEFAULT '[]'::jsonb,
+    aid smallint NOT NULL DEFAULT '0'::smallint,
+    CONSTRAINT "PK_58b491eba12019e82f05997bb4f" PRIMARY KEY (did)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+
+
+
+CREATE TABLE IF NOT EXISTS public.district_tariff
+(
+    dist_tariff_id bigint NOT NULL,
+    country character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    area character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    cid bigint NOT NULL DEFAULT '84'::bigint,
+    pid bigint NOT NULL DEFAULT '0'::bigint,
+    pname character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    did bigint NOT NULL DEFAULT '84'::bigint,
+    dname character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    level smallint NOT NULL DEFAULT '0'::smallint,
+    created_at bigint NOT NULL DEFAULT '0'::bigint,
+    aid bigint NOT NULL DEFAULT '0'::bigint,
+    CONSTRAINT "PK_c565ce731695d2756fb8e20421f" PRIMARY KEY (dist_tariff_id)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+
+
+CREATE TABLE IF NOT EXISTS public.driver_rating
+(
+    driver_rating_id bigint NOT NULL,
+    rating real NOT NULL DEFAULT '0'::real,
+    driver_id bigint NOT NULL DEFAULT '0'::bigint,
+    member_id bigint NOT NULL DEFAULT '0'::bigint,
+    request_id bigint NOT NULL DEFAULT '0'::bigint,
+    rating_option text[] COLLATE pg_catalog."default" NOT NULL,
+    comment character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    member_created bigint NOT NULL DEFAULT '0'::bigint,
+    member_updated bigint NOT NULL DEFAULT '0'::bigint,
+    created_at bigint NOT NULL DEFAULT '0'::bigint,
+    modified_at bigint NOT NULL DEFAULT '0'::bigint,
+    CONSTRAINT "PK_1db9d7c944117cce10b51192352" PRIMARY KEY (driver_rating_id)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+
+
+
+CREATE TABLE IF NOT EXISTS public.driver_working_time
+(
+    member_id bigint NOT NULL DEFAULT '0'::bigint,
+    my_vehicle_id bigint NOT NULL DEFAULT '0'::bigint,
+    member_created bigint NOT NULL DEFAULT '0'::bigint,
+    member_updated bigint NOT NULL DEFAULT '0'::bigint,
+    status smallint NOT NULL DEFAULT '0'::smallint,
+    created_at bigint NOT NULL DEFAULT '0'::bigint,
+    modified_at bigint NOT NULL DEFAULT '0'::bigint,
+    id_workingtime bigint NOT NULL DEFAULT '0'::bigint,
+    id character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    offer_id bigint NOT NULL DEFAULT '0'::bigint,
+    CONSTRAINT "PK_2e90e2281cf9edd809e8a671a86" PRIMARY KEY (id),
+    CONSTRAINT "UQ_3ae3efa6e01189e57af55a8d1f1" UNIQUE (id, id_workingtime, offer_id)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+
+CREATE TABLE IF NOT EXISTS public.driveroffer
+(
+    portal_id bigint DEFAULT '0'::bigint,
+    portal_code character varying COLLATE pg_catalog."default" DEFAULT ''::character varying,
+    customer_id bigint DEFAULT '0'::bigint,
+    client_id bigint NOT NULL DEFAULT '0'::bigint,
+    country_prefix character varying COLLATE pg_catalog."default" DEFAULT '+84'::character varying,
+    member_created bigint DEFAULT '0'::bigint,
+    member_updated bigint DEFAULT '0'::bigint,
+    status smallint NOT NULL DEFAULT '1'::smallint,
+    created_at bigint DEFAULT '0'::bigint,
+    modified_at bigint DEFAULT '0'::bigint,
+    offer_id bigint NOT NULL,
+    member_id bigint NOT NULL DEFAULT '0'::bigint,
+    offer_mode smallint NOT NULL DEFAULT '1'::smallint,
+    my_vehicle_id bigint DEFAULT '-1'::bigint,
+    from_lon real DEFAULT '0'::real,
+    to_lon real DEFAULT '0'::real,
+    from_address character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    from_lat real DEFAULT '0'::real,
+    to_lat real DEFAULT '0'::real,
+    to_address character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    route_id bigint DEFAULT '-1'::bigint,
+    offer_code character varying COLLATE pg_catalog."default" DEFAULT ''::character varying,
+    distance real DEFAULT '0'::real,
+    from_workingtime bigint NOT NULL DEFAULT '0'::bigint,
+    to_workingtime bigint NOT NULL DEFAULT '0'::bigint,
+    service_provider_id bigint NOT NULL DEFAULT '0'::bigint,
+    resource_id bigint NOT NULL DEFAULT '0'::bigint,
+    idwt character varying COLLATE pg_catalog."default" DEFAULT ''::character varying,
+    CONSTRAINT "PK_229d234025ac5aa026da7e95cbb" PRIMARY KEY (offer_id)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+
+
+CREATE TABLE IF NOT EXISTS public.fixed_route
+(
+    fixed_route_id integer NOT NULL,
+    fixed_route_name character varying COLLATE pg_catalog."default" NOT NULL,
+    distance integer NOT NULL DEFAULT 0,
+    member_created bigint NOT NULL DEFAULT '0'::bigint,
+    member_updated bigint NOT NULL DEFAULT '0'::bigint,
+    created_at bigint NOT NULL DEFAULT '0'::bigint,
+    modified_at bigint NOT NULL DEFAULT '0'::bigint,
+    CONSTRAINT "PK_e6c08cee72f99d0d9793ee15a1c" PRIMARY KEY (fixed_route_id)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+
+
+CREATE TABLE IF NOT EXISTS public.fixed_route_sp
+(
+    fixed_route_id integer NOT NULL,
+    fixed_route_name character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    member_created bigint NOT NULL DEFAULT '0'::bigint,
+    member_updated bigint NOT NULL DEFAULT '0'::bigint,
+    created_at bigint NOT NULL DEFAULT '0'::bigint,
+    modified_at bigint NOT NULL DEFAULT '0'::bigint,
+    status smallint NOT NULL DEFAULT '1'::smallint,
+    client_id bigint NOT NULL DEFAULT '1'::bigint,
+    service_provider_id bigint NOT NULL DEFAULT '1'::bigint,
+    CONSTRAINT "PK_e7529750622bafe2e5a0d544afd" PRIMARY KEY (fixed_route_id)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+
+
+CREATE TABLE IF NOT EXISTS public.import_excel
+(
+    portal_id bigint DEFAULT '0'::bigint,
+    portal_code character varying COLLATE pg_catalog."default" DEFAULT ''::character varying,
+    customer_id bigint DEFAULT '0'::bigint,
+    client_id bigint NOT NULL DEFAULT '0'::bigint,
+    country_prefix character varying COLLATE pg_catalog."default" DEFAULT '+84'::character varying,
+    member_created bigint DEFAULT '0'::bigint,
+    member_updated bigint DEFAULT '0'::bigint,
+    status smallint NOT NULL DEFAULT '1'::smallint,
+    created_at bigint DEFAULT '0'::bigint,
+    modified_at bigint DEFAULT '0'::bigint,
+    import_excel_id bigint NOT NULL,
+    code character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    name character varying COLLATE pg_catalog."default" NOT NULL,
+    owner_id bigint NOT NULL,
+    type character varying COLLATE pg_catalog."default" NOT NULL DEFAULT 'requestpool'::character varying,
+    options jsonb NOT NULL DEFAULT '{}'::jsonb,
+    value jsonb NOT NULL DEFAULT '[]'::jsonb,
+    CONSTRAINT "PK_e434d70685cd1733062f71b5c64" PRIMARY KEY (import_excel_id)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+
+
+
+CREATE TABLE IF NOT EXISTS public.membergroup
+(
+    portal_id bigint DEFAULT '0'::bigint,
+    portal_code character varying COLLATE pg_catalog."default" DEFAULT ''::character varying,
+    customer_id bigint DEFAULT '0'::bigint,
+    client_id bigint NOT NULL DEFAULT '0'::bigint,
+    country_prefix character varying COLLATE pg_catalog."default" DEFAULT '+84'::character varying,
+    member_created bigint DEFAULT '0'::bigint,
+    member_updated bigint DEFAULT '0'::bigint,
+    status smallint NOT NULL DEFAULT '1'::smallint,
+    created_at bigint DEFAULT '0'::bigint,
+    modified_at bigint DEFAULT '0'::bigint,
+    member_group_id bigint NOT NULL,
+    "group" character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    member_group_name character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    list_rights jsonb DEFAULT '[]'::jsonb,
+    from_time bigint NOT NULL DEFAULT '0'::bigint,
+    to_time bigint NOT NULL DEFAULT '0'::bigint,
+    list_access_ids bigint[] NOT NULL DEFAULT '{}'::bigint[],
+    CONSTRAINT "PK_e8b6941fa52ebe5f7befdefbdf6" PRIMARY KEY (member_group_id)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+
+
+
+CREATE TABLE IF NOT EXISTS public.membergroup
+(
+    portal_id bigint DEFAULT '0'::bigint,
+    portal_code character varying COLLATE pg_catalog."default" DEFAULT ''::character varying,
+    customer_id bigint DEFAULT '0'::bigint,
+    client_id bigint NOT NULL DEFAULT '0'::bigint,
+    country_prefix character varying COLLATE pg_catalog."default" DEFAULT '+84'::character varying,
+    member_created bigint DEFAULT '0'::bigint,
+    member_updated bigint DEFAULT '0'::bigint,
+    status smallint NOT NULL DEFAULT '1'::smallint,
+    created_at bigint DEFAULT '0'::bigint,
+    modified_at bigint DEFAULT '0'::bigint,
+    member_group_id bigint NOT NULL,
+    "group" character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    member_group_name character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    list_rights jsonb DEFAULT '[]'::jsonb,
+    from_time bigint NOT NULL DEFAULT '0'::bigint,
+    to_time bigint NOT NULL DEFAULT '0'::bigint,
+    list_access_ids bigint[] NOT NULL DEFAULT '{}'::bigint[],
+    CONSTRAINT "PK_e8b6941fa52ebe5f7befdefbdf6" PRIMARY KEY (member_group_id)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+
+
+CREATE TABLE IF NOT EXISTS public.memberinfo
+(
+    portal_id bigint DEFAULT '0'::bigint,
+    portal_code character varying COLLATE pg_catalog."default" DEFAULT ''::character varying,
+    customer_id bigint DEFAULT '0'::bigint,
+    client_id bigint NOT NULL DEFAULT '0'::bigint,
+    country_prefix character varying COLLATE pg_catalog."default" DEFAULT '+84'::character varying,
+    member_created bigint DEFAULT '0'::bigint,
+    member_updated bigint DEFAULT '0'::bigint,
+    status smallint NOT NULL DEFAULT '1'::smallint,
+    created_at bigint DEFAULT '0'::bigint,
+    modified_at bigint DEFAULT '0'::bigint,
+    uid character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    phone character varying COLLATE pg_catalog."default" NOT NULL,
+    email character varying COLLATE pg_catalog."default" NOT NULL,
+    name character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    title character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    contact_name character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    list_roles character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    role smallint NOT NULL DEFAULT '0'::smallint,
+    department smallint NOT NULL DEFAULT '0'::smallint,
+    company_name character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    bank_account character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    business_status smallint NOT NULL DEFAULT '0'::smallint,
+    business_license character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    demand character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    address character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    tax_id character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    images jsonb NOT NULL DEFAULT '{}'::jsonb,
+    member_id bigint NOT NULL,
+    group_id character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    service_provider character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    request_provider character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    is_main boolean NOT NULL DEFAULT false,
+    depots character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    device_token character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    my_vehicle character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    driving_licence character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    is_admin boolean NOT NULL DEFAULT false,
+    CONSTRAINT "PK_eb0ef87a76cbe44d03736e3858e" PRIMARY KEY (member_id)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+
+
+CREATE TABLE IF NOT EXISTS public.mydepots
+(
+    portal_id bigint DEFAULT '0'::bigint,
+    portal_code character varying COLLATE pg_catalog."default" DEFAULT ''::character varying,
+    customer_id bigint DEFAULT '0'::bigint,
+    client_id bigint NOT NULL DEFAULT '0'::bigint,
+    country_prefix character varying COLLATE pg_catalog."default" DEFAULT '+84'::character varying,
+    member_created bigint DEFAULT '0'::bigint,
+    member_updated bigint DEFAULT '0'::bigint,
+    status smallint NOT NULL DEFAULT '1'::smallint,
+    created_at bigint DEFAULT '0'::bigint,
+    modified_at bigint DEFAULT '0'::bigint,
+    depot_id bigint NOT NULL,
+    name character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    contact_name character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    address character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    phone character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    lat real NOT NULL DEFAULT '0'::real,
+    lon real NOT NULL DEFAULT '0'::real,
+    request_provider_id character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    service_provider_id character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    is_warehouse boolean NOT NULL DEFAULT false,
+    CONSTRAINT "PK_b79fe5cddf8d8980c43ec092976" PRIMARY KEY (depot_id)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+
+
+CREATE TABLE IF NOT EXISTS public.mygarage
+(
+    portal_id bigint DEFAULT '0'::bigint,
+    portal_code character varying COLLATE pg_catalog."default" DEFAULT ''::character varying,
+    customer_id bigint DEFAULT '0'::bigint,
+    client_id bigint NOT NULL DEFAULT '0'::bigint,
+    country_prefix character varying COLLATE pg_catalog."default" DEFAULT '+84'::character varying,
+    member_created bigint DEFAULT '0'::bigint,
+    member_updated bigint DEFAULT '0'::bigint,
+    status smallint NOT NULL DEFAULT '1'::smallint,
+    created_at bigint DEFAULT '0'::bigint,
+    modified_at bigint DEFAULT '0'::bigint,
+    garage_id bigint NOT NULL,
+    service_provider_id character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    name character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    contact_name character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    address character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    phone character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    lat real NOT NULL DEFAULT '0'::real,
+    lon real NOT NULL DEFAULT '0'::real,
+    CONSTRAINT "PK_6d28e2d6615bb22dbb5b1fe4973" PRIMARY KEY (garage_id)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+
+
+
+CREATE TABLE IF NOT EXISTS public.myparkings
+(
+    portal_id bigint DEFAULT '0'::bigint,
+    portal_code character varying COLLATE pg_catalog."default" DEFAULT ''::character varying,
+    customer_id bigint DEFAULT '0'::bigint,
+    client_id bigint NOT NULL DEFAULT '0'::bigint,
+    country_prefix character varying COLLATE pg_catalog."default" DEFAULT '+84'::character varying,
+    member_created bigint DEFAULT '0'::bigint,
+    member_updated bigint DEFAULT '0'::bigint,
+    status smallint NOT NULL DEFAULT '1'::smallint,
+    created_at bigint DEFAULT '0'::bigint,
+    modified_at bigint DEFAULT '0'::bigint,
+    parking_id bigint NOT NULL,
+    service_provider_id bigint NOT NULL DEFAULT '0'::bigint,
+    contact_name character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    name character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    address character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    phone character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    lat real NOT NULL DEFAULT '0'::real,
+    lon real NOT NULL DEFAULT '0'::real,
+    CONSTRAINT "PK_45b493a23feaded83738c17fb42" PRIMARY KEY (parking_id)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+
+
+
+
+CREATE TABLE IF NOT EXISTS public.myparkings
+(
+    portal_id bigint DEFAULT '0'::bigint,
+    portal_code character varying COLLATE pg_catalog."default" DEFAULT ''::character varying,
+    customer_id bigint DEFAULT '0'::bigint,
+    client_id bigint NOT NULL DEFAULT '0'::bigint,
+    country_prefix character varying COLLATE pg_catalog."default" DEFAULT '+84'::character varying,
+    member_created bigint DEFAULT '0'::bigint,
+    member_updated bigint DEFAULT '0'::bigint,
+    status smallint NOT NULL DEFAULT '1'::smallint,
+    created_at bigint DEFAULT '0'::bigint,
+    modified_at bigint DEFAULT '0'::bigint,
+    parking_id bigint NOT NULL,
+    service_provider_id bigint NOT NULL DEFAULT '0'::bigint,
+    contact_name character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    name character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    address character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    phone character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    lat real NOT NULL DEFAULT '0'::real,
+    lon real NOT NULL DEFAULT '0'::real,
+    CONSTRAINT "PK_45b493a23feaded83738c17fb42" PRIMARY KEY (parking_id)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+
+
+CREATE TABLE IF NOT EXISTS public.myvehicles
+(
+    portal_id bigint DEFAULT '0'::bigint,
+    portal_code character varying COLLATE pg_catalog."default" DEFAULT ''::character varying,
+    customer_id bigint DEFAULT '0'::bigint,
+    client_id bigint NOT NULL DEFAULT '0'::bigint,
+    country_prefix character varying COLLATE pg_catalog."default" DEFAULT '+84'::character varying,
+    member_created bigint DEFAULT '0'::bigint,
+    member_updated bigint DEFAULT '0'::bigint,
+    status smallint NOT NULL DEFAULT '1'::smallint,
+    created_at bigint DEFAULT '0'::bigint,
+    modified_at bigint DEFAULT '0'::bigint,
+    my_vehicle_id bigint NOT NULL,
+    resource_id bigint NOT NULL DEFAULT '0'::bigint,
+    main_driver_id bigint NOT NULL DEFAULT '0'::bigint,
+    main_parking_place bigint NOT NULL DEFAULT '0'::bigint,
+    name_of_owner character varying COLLATE pg_catalog."default" NOT NULL,
+    registration_number character varying COLLATE pg_catalog."default" NOT NULL,
+    service_provider_id bigint NOT NULL DEFAULT '0'::bigint,
+    images jsonb NOT NULL DEFAULT '[]'::jsonb,
+    valid_from bigint NOT NULL DEFAULT '0'::bigint,
+    valid_to bigint NOT NULL DEFAULT '0'::bigint,
+    CONSTRAINT "PK_a2f2c5280da7502684bc0597e25" PRIMARY KEY (my_vehicle_id),
+    CONSTRAINT "FK_484c2e2875dfe8beeca1f2f2dab" FOREIGN KEY (resource_id)
+        REFERENCES public.base_vehicles (resource_id) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+
+CREATE TABLE IF NOT EXISTS public.notification
+(
+    title character varying COLLATE pg_catalog."default" NOT NULL,
+    message character varying COLLATE pg_catalog."default" NOT NULL,
+    route_id bigint NOT NULL DEFAULT '0'::bigint,
+    offer_id bigint NOT NULL DEFAULT '0'::bigint,
+    member_id bigint NOT NULL DEFAULT '0'::bigint,
+    status smallint NOT NULL DEFAULT '0'::smallint,
+    created_at bigint NOT NULL DEFAULT '0'::bigint,
+    app_noti_id bigint NOT NULL DEFAULT '0'::bigint,
+    view smallint NOT NULL DEFAULT '0'::smallint,
+    modified_at bigint NOT NULL DEFAULT '0'::bigint,
+    type character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    CONSTRAINT "PK_add1de6a5445a40d2e91a7f979d" PRIMARY KEY (app_noti_id),
+    CONSTRAINT "UQ_02d4d381df8f6744700a088da57" UNIQUE (route_id, offer_id, member_id, type)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+
+
+CREATE TABLE IF NOT EXISTS public.parent_menu
+(
+    portal_id bigint DEFAULT '0'::bigint,
+    portal_code character varying COLLATE pg_catalog."default" DEFAULT ''::character varying,
+    customer_id bigint DEFAULT '0'::bigint,
+    client_id bigint NOT NULL DEFAULT '0'::bigint,
+    country_prefix character varying COLLATE pg_catalog."default" DEFAULT '+84'::character varying,
+    member_created bigint DEFAULT '0'::bigint,
+    member_updated bigint DEFAULT '0'::bigint,
+    status smallint NOT NULL DEFAULT '1'::smallint,
+    created_at bigint DEFAULT '0'::bigint,
+    modified_at bigint DEFAULT '0'::bigint,
+    parent_id bigint NOT NULL,
+    path character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    meta jsonb NOT NULL DEFAULT '{}'::jsonb,
+    redirect jsonb NOT NULL DEFAULT '{}'::jsonb,
+    children_ids bigint[] NOT NULL,
+    is_mobile boolean NOT NULL DEFAULT false,
+    CONSTRAINT "PK_66e4d3044d333b236fc8debb360" PRIMARY KEY (parent_id)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+
+
+
+CREATE TABLE IF NOT EXISTS public.partner_info
+(
+    partner_id bigint NOT NULL,
+    client_id bigint NOT NULL DEFAULT '0'::bigint,
+    client_key character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    secret_key character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    partner_client_key character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    partner_secret_key character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    partner_url character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    status smallint NOT NULL DEFAULT '1'::smallint,
+    kind_of_provider smallint NOT NULL DEFAULT '1'::smallint,
+    member_created bigint NOT NULL DEFAULT '0'::bigint,
+    created_at bigint NOT NULL DEFAULT '0'::bigint,
+    modified_at bigint NOT NULL DEFAULT '0'::bigint,
+    partner_name character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    partner_code character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    payment_method smallint NOT NULL DEFAULT '1'::smallint,
+    shop_id character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    access_token character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    CONSTRAINT "PK_da17d29bc7a48736e474a872f0e" PRIMARY KEY (partner_id),
+    CONSTRAINT "UQ_70fa4a245d73932f0c1da26af09" UNIQUE (partner_id, kind_of_provider)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+
+
+CREATE TABLE IF NOT EXISTS public.portals
+(
+    portal_id bigint NOT NULL,
+    portal_name character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    created_at bigint DEFAULT '0'::bigint,
+    CONSTRAINT "PK_266d55884220432da1b47b54a6b" PRIMARY KEY (portal_id)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+
+
+
+
+
+//=====================================
+
+
+
+CREATE TABLE IF NOT EXISTS public.province
+(
+    portal_id bigint DEFAULT '0'::bigint,
+    portal_code character varying COLLATE pg_catalog."default" DEFAULT ''::character varying,
+    customer_id bigint DEFAULT '0'::bigint,
+    client_id bigint NOT NULL DEFAULT '0'::bigint,
+    country_prefix character varying COLLATE pg_catalog."default" DEFAULT '+84'::character varying,
+    member_created bigint DEFAULT '0'::bigint,
+    member_updated bigint DEFAULT '0'::bigint,
+    status smallint NOT NULL DEFAULT '1'::smallint,
+    created_at bigint DEFAULT '0'::bigint,
+    modified_at bigint DEFAULT '0'::bigint,
+    pid bigint NOT NULL,
+    cid bigint NOT NULL DEFAULT '84'::bigint,
+    pname character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    pshort character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    pkey text[] COLLATE pg_catalog."default" NOT NULL,
+    dists jsonb NOT NULL DEFAULT '[]'::jsonb,
+    aid smallint NOT NULL DEFAULT '0'::smallint,
+    aname character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    ashort character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    CONSTRAINT "PK_fecb13474dba6654c8f7828abd8" PRIMARY KEY (pid)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+
+
+
+
+
+
+
+
+CREATE TABLE IF NOT EXISTS public.requestproviderinfo
+(
+    portal_id bigint DEFAULT '0'::bigint,
+    portal_code character varying COLLATE pg_catalog."default" DEFAULT ''::character varying,
+    customer_id bigint DEFAULT '0'::bigint,
+    client_id bigint NOT NULL DEFAULT '0'::bigint,
+    country_prefix character varying COLLATE pg_catalog."default" DEFAULT '+84'::character varying,
+    member_created bigint DEFAULT '0'::bigint,
+    member_updated bigint DEFAULT '0'::bigint,
+    status smallint NOT NULL DEFAULT '1'::smallint,
+    created_at bigint DEFAULT '0'::bigint,
+    modified_at bigint DEFAULT '0'::bigint,
+    uid character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    phone character varying COLLATE pg_catalog."default" NOT NULL,
+    email character varying COLLATE pg_catalog."default" NOT NULL,
+    name character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    title character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    contact_name character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    list_roles character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    role smallint NOT NULL DEFAULT '0'::smallint,
+    department smallint NOT NULL DEFAULT '0'::smallint,
+    company_name character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    bank_account character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    business_status smallint NOT NULL DEFAULT '0'::smallint,
+    business_license character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    demand character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    address character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    tax_id character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    images jsonb NOT NULL DEFAULT '{}'::jsonb,
+    request_provider_id bigint NOT NULL,
+    is_main boolean NOT NULL DEFAULT false,
+    type smallint NOT NULL DEFAULT '1'::smallint,
+    is_use_public_price boolean NOT NULL DEFAULT true,
+    is_latlon boolean NOT NULL DEFAULT false,
+    code character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    min_order_per_mon bigint NOT NULL DEFAULT '0'::bigint,
+    reconcile_type smallint NOT NULL DEFAULT '1'::smallint,
+    CONSTRAINT "PK_0367875722d9029eaf6524177d2" PRIMARY KEY (request_provider_id)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CREATE TABLE IF NOT EXISTS public.routeinfo
+(
+    portal_id bigint DEFAULT '0'::bigint,
+    portal_code character varying COLLATE pg_catalog."default" DEFAULT ''::character varying,
+    customer_id bigint DEFAULT '0'::bigint,
+    client_id bigint NOT NULL DEFAULT '0'::bigint,
+    country_prefix character varying COLLATE pg_catalog."default" DEFAULT '+84'::character varying,
+    member_created bigint DEFAULT '0'::bigint,
+    member_updated bigint DEFAULT '0'::bigint,
+    status smallint NOT NULL DEFAULT '1'::smallint,
+    created_at bigint DEFAULT '0'::bigint,
+    modified_at bigint DEFAULT '0'::bigint,
+    route_id bigint NOT NULL,
+    request_type smallint NOT NULL DEFAULT '1'::smallint,
+    offer_id bigint NOT NULL DEFAULT '0'::bigint,
+    driver_id bigint NOT NULL DEFAULT '0'::bigint,
+    volume real NOT NULL DEFAULT '0'::real,
+    weight real NOT NULL DEFAULT '0'::real,
+    countofpackage smallint NOT NULL DEFAULT '1'::smallint,
+    countofroute smallint NOT NULL DEFAULT '1'::smallint,
+    distance real NOT NULL DEFAULT '0'::real,
+    distance_requests real NOT NULL DEFAULT '0'::real,
+    duration smallint NOT NULL DEFAULT '1'::smallint,
+    servicelevel smallint NOT NULL DEFAULT '1'::smallint,
+    from_address character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    from_lat real NOT NULL DEFAULT '0'::real,
+    from_lon real NOT NULL DEFAULT '0'::real,
+    file_name character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    to_address character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    to_lat real NOT NULL DEFAULT '0'::real,
+    to_lon real NOT NULL DEFAULT '0'::real,
+    start_time bigint NOT NULL DEFAULT '0'::bigint,
+    end_time bigint NOT NULL DEFAULT '0'::bigint,
+    service_provider_id bigint NOT NULL DEFAULT '0'::bigint,
+    route_core_id bigint NOT NULL DEFAULT '0'::bigint,
+    CONSTRAINT "PK_332d401e8087c9a7b211ed1dad7" PRIMARY KEY (route_id)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+
+
+
+
+
+
+
+
+CREATE TABLE IF NOT EXISTS public.sequenceinfo
+(
+    seq_id bigint NOT NULL,
+    request_id bigint NOT NULL,
+    stoppoint_type smallint NOT NULL,
+    seq_index smallint NOT NULL DEFAULT '0'::smallint,
+    route_id bigint NOT NULL DEFAULT '0'::bigint,
+    distancetonext real NOT NULL DEFAULT '0'::real,
+    count_of_parcels smallint NOT NULL DEFAULT '1'::smallint,
+    kind_of_plan integer NOT NULL DEFAULT 2,
+    transport_id character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    latofstoppoint real NOT NULL DEFAULT '0'::real,
+    lonofstoppoint real NOT NULL DEFAULT '0'::real,
+    seq_index_new smallint NOT NULL DEFAULT '0'::smallint,
+    created_at bigint NOT NULL DEFAULT '0'::bigint,
+    should_arival_time bigint NOT NULL DEFAULT '0'::bigint,
+    changedpickup_datetime character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    route_core_id bigint NOT NULL DEFAULT '0'::bigint,
+    should_arival bigint NOT NULL DEFAULT '0'::bigint,
+    CONSTRAINT "PK_8c75285b953273e701e1642293f" PRIMARY KEY (seq_id),
+    CONSTRAINT "UQ_63a7572be58dd1892acd29a4294" UNIQUE (seq_id, route_id)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+
+
+CREATE TABLE IF NOT EXISTS public.serviceprovider_services
+(
+    id bigint NOT NULL,
+    client_id bigint NOT NULL DEFAULT '0'::bigint,
+    service_provider_id bigint NOT NULL DEFAULT '0'::bigint,
+    my_service_id smallint NOT NULL DEFAULT '0'::smallint,
+    service_id bigint NOT NULL DEFAULT '0'::bigint,
+    status smallint NOT NULL DEFAULT '1'::smallint,
+    valid_from bigint NOT NULL DEFAULT '0'::bigint,
+    valid_to bigint NOT NULL DEFAULT '0'::bigint,
+    extra_service_id smallint[] NOT NULL DEFAULT '{}'::smallint[],
+    external_code character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    member_created bigint NOT NULL DEFAULT '0'::bigint,
+    member_updated bigint NOT NULL DEFAULT '0'::bigint,
+    created_at bigint NOT NULL DEFAULT '0'::bigint,
+    modified_at bigint NOT NULL DEFAULT '0'::bigint,
+    portal_id bigint NOT NULL DEFAULT '0'::bigint,
+    CONSTRAINT "PK_4507eb836b2a4d75a4bc97afe53" PRIMARY KEY (id),
+    CONSTRAINT "UQ_3c437dcf895ba87ab6e62e0aa34" UNIQUE (client_id, service_provider_id, my_service_id, service_id)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+
+
+
+
+
+
+CREATE TABLE IF NOT EXISTS public.serviceproviderinfo
+(
+    portal_id bigint DEFAULT '0'::bigint,
+    portal_code character varying COLLATE pg_catalog."default" DEFAULT ''::character varying,
+    customer_id bigint DEFAULT '0'::bigint,
+    client_id bigint NOT NULL DEFAULT '0'::bigint,
+    country_prefix character varying COLLATE pg_catalog."default" DEFAULT '+84'::character varying,
+    member_created bigint DEFAULT '0'::bigint,
+    member_updated bigint DEFAULT '0'::bigint,
+    status smallint NOT NULL DEFAULT '1'::smallint,
+    created_at bigint DEFAULT '0'::bigint,
+    modified_at bigint DEFAULT '0'::bigint,
+    uid character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    phone character varying COLLATE pg_catalog."default" NOT NULL,
+    email character varying COLLATE pg_catalog."default" NOT NULL,
+    name character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    title character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    contact_name character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    list_roles character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    role smallint NOT NULL DEFAULT '0'::smallint,
+    department smallint NOT NULL DEFAULT '0'::smallint,
+    company_name character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    bank_account character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    business_status smallint NOT NULL DEFAULT '0'::smallint,
+    business_license character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    demand character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    address character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    tax_id character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    images jsonb NOT NULL DEFAULT '{}'::jsonb,
+    service_provider_id bigint NOT NULL,
+    is_main boolean NOT NULL DEFAULT false,
+    type smallint NOT NULL DEFAULT '1'::smallint,
+    excel_templates jsonb NOT NULL DEFAULT '[]'::jsonb,
+    code character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    share_portal boolean NOT NULL DEFAULT false,
+    CONSTRAINT "PK_b97bdce19078728e763ecf00b80" PRIMARY KEY (service_provider_id)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+
+
+
+
+CREATE TABLE IF NOT EXISTS public.socket_clientpool
+(
+    socket_client_id text COLLATE pg_catalog."default" NOT NULL,
+    portal_id bigint NOT NULL DEFAULT '1001'::bigint,
+    client_id bigint NOT NULL DEFAULT '1'::bigint,
+    member_id bigint NOT NULL DEFAULT '0'::bigint,
+    created_at bigint NOT NULL DEFAULT '0'::bigint,
+    CONSTRAINT "PK_9a77a8b43087cd9b2cb83ab3a7f" PRIMARY KEY (socket_client_id)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+
+
+
+
+
+CREATE TABLE IF NOT EXISTS public.sparepart
+(
+    portal_id bigint DEFAULT '0'::bigint,
+    portal_code character varying COLLATE pg_catalog."default" DEFAULT ''::character varying,
+    customer_id bigint DEFAULT '0'::bigint,
+    client_id bigint NOT NULL DEFAULT '0'::bigint,
+    country_prefix character varying COLLATE pg_catalog."default" DEFAULT '+84'::character varying,
+    member_created bigint DEFAULT '0'::bigint,
+    member_updated bigint DEFAULT '0'::bigint,
+    status smallint NOT NULL DEFAULT '1'::smallint,
+    created_at bigint DEFAULT '0'::bigint,
+    modified_at bigint DEFAULT '0'::bigint,
+    sparepart_id bigint NOT NULL,
+    service_provider_id bigint NOT NULL DEFAULT '0'::bigint,
+    sparepart_group_id bigint NOT NULL,
+    manufacturer character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    sparepart_name character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    description character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    product_code character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    export_date bigint NOT NULL DEFAULT '0'::bigint,
+    start_date bigint NOT NULL DEFAULT '0'::bigint,
+    price real NOT NULL DEFAULT '0'::real,
+    files jsonb NOT NULL DEFAULT '[]'::jsonb,
+    CONSTRAINT "PK_789eeb0fb033d412e3e0ce7bbca" PRIMARY KEY (sparepart_id)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+
+
+
+
+
+
+CREATE TABLE IF NOT EXISTS public.sparepart_group
+(
+    portal_id bigint DEFAULT '0'::bigint,
+    portal_code character varying COLLATE pg_catalog."default" DEFAULT ''::character varying,
+    customer_id bigint DEFAULT '0'::bigint,
+    client_id bigint NOT NULL DEFAULT '0'::bigint,
+    country_prefix character varying COLLATE pg_catalog."default" DEFAULT '+84'::character varying,
+    member_created bigint DEFAULT '0'::bigint,
+    member_updated bigint DEFAULT '0'::bigint,
+    status smallint NOT NULL DEFAULT '1'::smallint,
+    created_at bigint DEFAULT '0'::bigint,
+    modified_at bigint DEFAULT '0'::bigint,
+    sparepart_group_id bigint NOT NULL,
+    sparepart_group_code character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    service_provider_id bigint NOT NULL DEFAULT '0'::bigint,
+    sparepart_group_name character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    owner character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    CONSTRAINT "PK_450bd40b1cf50c4c9a3e6fedf76" PRIMARY KEY (sparepart_group_id)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+
+
+
+
+
+
+
+
+CREATE TABLE IF NOT EXISTS public.sparepart_history
+(
+    portal_id bigint DEFAULT '0'::bigint,
+    portal_code character varying COLLATE pg_catalog."default" DEFAULT ''::character varying,
+    customer_id bigint DEFAULT '0'::bigint,
+    client_id bigint NOT NULL DEFAULT '0'::bigint,
+    country_prefix character varying COLLATE pg_catalog."default" DEFAULT '+84'::character varying,
+    member_created bigint DEFAULT '0'::bigint,
+    member_updated bigint DEFAULT '0'::bigint,
+    status smallint NOT NULL DEFAULT '1'::smallint,
+    created_at bigint DEFAULT '0'::bigint,
+    modified_at bigint DEFAULT '0'::bigint,
+    sparepart_history_id bigint NOT NULL,
+    sparepart_id bigint NOT NULL DEFAULT '0'::bigint,
+    from_date bigint NOT NULL DEFAULT '0'::bigint,
+    current_location character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    reason character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    CONSTRAINT "PK_f6d4ec396135d7e99f0fa7b10ef" PRIMARY KEY (sparepart_history_id)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+
+
+
+
+CREATE TABLE IF NOT EXISTS public.supplies
+(
+    id integer NOT NULL,
+    name character varying COLLATE pg_catalog."default",
+    description character varying COLLATE pg_catalog."default",
+    manufacturer character varying COLLATE pg_catalog."default",
+    color character varying COLLATE pg_catalog."default",
+    inventory integer,
+    CONSTRAINT supplies_pkey PRIMARY KEY (id),
+    CONSTRAINT supplies_inventory_check CHECK (inventory > 0)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+
+
+
+CREATE TABLE IF NOT EXISTS public.tariff_buy
+(
+    tariff_id bigint NOT NULL,
+    zone_group_id smallint NOT NULL DEFAULT '0'::smallint,
+    name character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    service_provider_id bigint NOT NULL DEFAULT '0'::bigint,
+    zone_type smallint NOT NULL DEFAULT '0'::smallint,
+    from_basic_unit real NOT NULL DEFAULT '0'::real,
+    to_basic_unit real NOT NULL DEFAULT '0'::real,
+    extra_net_per_added_service_unit real NOT NULL DEFAULT '0'::real,
+    extra_net_per_added_basic_unit real NOT NULL DEFAULT '0'::real,
+    vat_percent real NOT NULL DEFAULT '0'::real,
+    unit_of_basic_tariff smallint NOT NULL DEFAULT '0'::smallint,
+    incl_service_tariff real NOT NULL DEFAULT '0'::real,
+    from_service_tariff real NOT NULL DEFAULT '0'::real,
+    to_service_tariff real NOT NULL DEFAULT '0'::real,
+    valid_from bigint NOT NULL DEFAULT '0'::bigint,
+    valid_to bigint NOT NULL DEFAULT '0'::bigint,
+    net_price bigint NOT NULL DEFAULT '0'::bigint,
+    service_id smallint NOT NULL DEFAULT '0'::smallint,
+    my_service_id smallint NOT NULL DEFAULT '0'::smallint,
+    portal_id bigint NOT NULL DEFAULT '0'::bigint,
+    client_id bigint NOT NULL DEFAULT '0'::bigint,
+    member_created bigint NOT NULL DEFAULT '0'::bigint,
+    member_updated bigint NOT NULL DEFAULT '0'::bigint,
+    status smallint NOT NULL DEFAULT '1'::smallint,
+    created_at bigint NOT NULL DEFAULT '0'::bigint,
+    modified_at bigint NOT NULL DEFAULT '0'::bigint,
+    profit_margin smallint NOT NULL DEFAULT '0'::smallint,
+    step_of_basic_unit real NOT NULL DEFAULT '1'::real,
+    unit_of_service_tariff smallint NOT NULL DEFAULT '-1'::smallint,
+    CONSTRAINT "PK_b22e084b24974f741aad970113d" PRIMARY KEY (tariff_id)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+
+
+
+CREATE TABLE IF NOT EXISTS public.tariff_sell
+(
+    tariff_id bigint NOT NULL,
+    zone_group_id smallint NOT NULL DEFAULT '0'::smallint,
+    name character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    request_provider_id bigint NOT NULL DEFAULT '0'::bigint,
+    zone_type smallint NOT NULL DEFAULT '0'::smallint,
+    from_basic_unit real NOT NULL DEFAULT '0'::real,
+    to_basic_unit real NOT NULL DEFAULT '0'::real,
+    extra_net_per_added_service_unit real NOT NULL DEFAULT '0'::real,
+    extra_net_per_added_basic_unit real NOT NULL DEFAULT '0'::real,
+    vat_percent real NOT NULL DEFAULT '0'::real,
+    unit_of_basic_tariff smallint NOT NULL DEFAULT '0'::smallint,
+    incl_service_tariff real NOT NULL DEFAULT '0'::real,
+    from_service_tariff real NOT NULL DEFAULT '0'::real,
+    to_service_tariff real NOT NULL DEFAULT '0'::real,
+    valid_from bigint NOT NULL DEFAULT '0'::bigint,
+    valid_to bigint NOT NULL DEFAULT '0'::bigint,
+    net_price bigint NOT NULL DEFAULT '0'::bigint,
+    my_service_id smallint NOT NULL DEFAULT '0'::smallint,
+    service_id smallint NOT NULL DEFAULT '0'::smallint,
+    portal_id bigint NOT NULL DEFAULT '0'::bigint,
+    client_id bigint NOT NULL DEFAULT '0'::bigint,
+    member_created bigint NOT NULL DEFAULT '0'::bigint,
+    member_updated bigint NOT NULL DEFAULT '0'::bigint,
+    status smallint NOT NULL DEFAULT '1'::smallint,
+    created_at bigint NOT NULL DEFAULT '0'::bigint,
+    modified_at bigint NOT NULL DEFAULT '0'::bigint,
+    profit_margin smallint NOT NULL DEFAULT '0'::smallint,
+    step_of_basic_unit real NOT NULL DEFAULT '1'::real,
+    service_provider_id bigint NOT NULL DEFAULT '0'::bigint,
+    unit_of_service_tariff smallint NOT NULL DEFAULT '-1'::smallint,
+    CONSTRAINT "PK_989191bdc72333daa09eb671bc0" PRIMARY KEY (tariff_id)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+
+
+
+
+CREATE TABLE IF NOT EXISTS public.tracking_shipping_order
+(
+    tracking_shipping_id bigint NOT NULL,
+    request_id bigint NOT NULL,
+    request_code character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    transport_id character varying COLLATE pg_catalog."default" NOT NULL,
+    service_provider_id bigint NOT NULL,
+    tracking_number character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    service_provider_name character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    cod real NOT NULL DEFAULT '0'::real,
+    product_price real NOT NULL DEFAULT '0'::real,
+    discount real NOT NULL DEFAULT '0'::real,
+    return_fee real NOT NULL DEFAULT '0'::real,
+    shipping_fee real NOT NULL DEFAULT '0'::real,
+    cod_fee real NOT NULL DEFAULT '0'::real,
+    insurance_fee real NOT NULL DEFAULT '0'::real,
+    total_fee real NOT NULL DEFAULT '0'::real,
+    vat_fee real NOT NULL DEFAULT '0'::real,
+    real_weight real NOT NULL DEFAULT '0'::real,
+    real_length real NOT NULL DEFAULT '0'::real,
+    real_width real NOT NULL DEFAULT '0'::real,
+    real_height real NOT NULL DEFAULT '0'::real,
+    count_of_parcels integer NOT NULL DEFAULT 1,
+    created_at bigint NOT NULL DEFAULT '0'::bigint,
+    modified_at bigint NOT NULL DEFAULT '0'::bigint,
+    tracking_info_list jsonb NOT NULL DEFAULT '[]'::jsonb,
+    CONSTRAINT "PK_194f48612cde3ea4cd45ae5f062" PRIMARY KEY (tracking_shipping_id),
+    CONSTRAINT "UQ_4789cf57e77f14d466930ff8d83" UNIQUE (request_id, transport_id)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+
+
+
+CREATE TABLE IF NOT EXISTS public.users
+(
+    portal_id bigint DEFAULT '0'::bigint,
+    portal_code character varying COLLATE pg_catalog."default" DEFAULT ''::character varying,
+    customer_id bigint DEFAULT '0'::bigint,
+    client_id bigint NOT NULL DEFAULT '0'::bigint,
+    country_prefix character varying COLLATE pg_catalog."default" DEFAULT '+84'::character varying,
+    member_created bigint DEFAULT '0'::bigint,
+    member_updated bigint DEFAULT '0'::bigint,
+    status smallint NOT NULL DEFAULT '1'::smallint,
+    created_at bigint DEFAULT '0'::bigint,
+    modified_at bigint DEFAULT '0'::bigint,
+    uid character varying COLLATE pg_catalog."default" NOT NULL,
+    username character varying COLLATE pg_catalog."default" NOT NULL,
+    password character varying COLLATE pg_catalog."default" NOT NULL,
+    fullname character varying COLLATE pg_catalog."default" NOT NULL,
+    last_login bigint NOT NULL DEFAULT '0'::bigint,
+    change_pass_at bigint NOT NULL DEFAULT '0'::bigint,
+    role character varying COLLATE pg_catalog."default" NOT NULL DEFAULT '1'::character varying,
+    member_id bigint NOT NULL DEFAULT '0'::bigint,
+    CONSTRAINT "PK_6e20ce1edf0678a09f1963f9587" PRIMARY KEY (uid),
+    CONSTRAINT "UQ_fe0bb3f6520ee0469504521e710" UNIQUE (username)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+
+
+
+CREATE TABLE IF NOT EXISTS public.ward
+(
+    portal_id bigint DEFAULT '0'::bigint,
+    portal_code character varying COLLATE pg_catalog."default" DEFAULT ''::character varying,
+    customer_id bigint DEFAULT '0'::bigint,
+    client_id bigint NOT NULL DEFAULT '0'::bigint,
+    country_prefix character varying COLLATE pg_catalog."default" DEFAULT '+84'::character varying,
+    member_created bigint DEFAULT '0'::bigint,
+    member_updated bigint DEFAULT '0'::bigint,
+    status smallint NOT NULL DEFAULT '1'::smallint,
+    created_at bigint DEFAULT '0'::bigint,
+    modified_at bigint DEFAULT '0'::bigint,
+    wid bigint NOT NULL,
+    wname character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    wshort character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    wkey text[] COLLATE pg_catalog."default" NOT NULL,
+    did bigint NOT NULL DEFAULT '84'::bigint,
+    dname character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    dshort character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    dkey text[] COLLATE pg_catalog."default" NOT NULL,
+    cid bigint NOT NULL DEFAULT '84'::bigint,
+    pid bigint NOT NULL DEFAULT '84'::bigint,
+    pname character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    pshort character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    pkey text[] COLLATE pg_catalog."default" NOT NULL,
+    aid smallint NOT NULL DEFAULT '0'::smallint,
+    CONSTRAINT "PK_76011a4f082f45414d471fe319d" PRIMARY KEY (wid)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+
+
+CREATE TABLE IF NOT EXISTS public.zone_compose_list
+(
+    zone_compose_id bigint NOT NULL,
+    dist_tariff_ids bigint[] NOT NULL DEFAULT '{}'::bigint[],
+    compose_name character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    created_at bigint NOT NULL DEFAULT '0'::bigint,
+    CONSTRAINT "PK_22e86035c936269c629bd7f8c58" PRIMARY KEY (zone_compose_id),
+    CONSTRAINT "UQ_b511a62bd71ea68dba5b63a687d" UNIQUE (dist_tariff_ids, compose_name)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+
+
+
+CREATE TABLE IF NOT EXISTS public.zone_group
+(
+    zone_group_id smallint NOT NULL,
+    client_id bigint NOT NULL DEFAULT '0'::bigint,
+    portal_id bigint NOT NULL DEFAULT '0'::bigint,
+    "desc" character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    zone_group_name character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    member_created bigint NOT NULL DEFAULT '0'::bigint,
+    created_at bigint NOT NULL DEFAULT '0'::bigint,
+    modified_at bigint NOT NULL DEFAULT '0'::bigint,
+    status smallint NOT NULL DEFAULT '2'::smallint,
+    CONSTRAINT "PK_766599c9f6b3d1446d829dbbc76" PRIMARY KEY (zone_group_id),
+    CONSTRAINT "UQ_54e96ef084135a25854840807e9" UNIQUE (zone_group_name)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

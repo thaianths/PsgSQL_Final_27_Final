@@ -1,0 +1,18 @@
+CREATE TABLE IF NOT EXISTS public.cms_notification
+(
+    cms_notification_id bigint NOT NULL,
+    client_id bigint NOT NULL DEFAULT '0'::bigint,
+    member_id bigint NOT NULL DEFAULT '0'::bigint,
+    message character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    title character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    type character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    status smallint NOT NULL DEFAULT '0'::smallint,
+    created_at bigint NOT NULL DEFAULT '0'::bigint,
+    CONSTRAINT "PK_120fb2cc1d8da3eaa333d2d96b5" PRIMARY KEY (cms_notification_id),
+    CONSTRAINT "UQ_120fb2cc1d8da3eaa333d2d96b5" UNIQUE (cms_notification_id)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+

@@ -1,0 +1,25 @@
+CREATE TABLE IF NOT EXISTS public.depot_collection_orderpool
+(
+    portal_id bigint DEFAULT '0'::bigint,
+    portal_code character varying COLLATE pg_catalog."default" DEFAULT ''::character varying,
+    customer_id bigint DEFAULT '0'::bigint,
+    client_id bigint NOT NULL DEFAULT '0'::bigint,
+    country_prefix character varying COLLATE pg_catalog."default" DEFAULT '+84'::character varying,
+    member_created bigint DEFAULT '0'::bigint,
+    member_updated bigint DEFAULT '0'::bigint,
+    status smallint NOT NULL DEFAULT '1'::smallint,
+    created_at bigint DEFAULT '0'::bigint,
+    modified_at bigint DEFAULT '0'::bigint,
+    collection_order_id bigint NOT NULL,
+    request_provider_id bigint NOT NULL DEFAULT '0'::bigint,
+    po_code character varying COLLATE pg_catalog."default" NOT NULL,
+    note character varying COLLATE pg_catalog."default" NOT NULL,
+    kind_ofcollection character varying COLLATE pg_catalog."default" NOT NULL DEFAULT 'purchase_order'::character varying,
+    CONSTRAINT "PK_f80a409793c038cee2748e0445c" PRIMARY KEY (collection_order_id),
+    CONSTRAINT "UQ_1c78224533ea04a6dbe342cc9cc" UNIQUE (po_code),
+    CONSTRAINT "UQ_9a25d6cfb754abd301a0685b624" UNIQUE (collection_order_id, request_provider_id)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;

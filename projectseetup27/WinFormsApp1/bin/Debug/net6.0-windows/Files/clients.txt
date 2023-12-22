@@ -1,0 +1,39 @@
+CREATE TABLE IF NOT EXISTS public.clients
+(
+    client_id bigint NOT NULL,
+    type smallint NOT NULL DEFAULT '0'::smallint,
+    group_id character varying COLLATE pg_catalog."default" NOT NULL DEFAULT '-1'::character varying,
+    uid character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    phone character varying COLLATE pg_catalog."default" NOT NULL,
+    email character varying COLLATE pg_catalog."default" NOT NULL,
+    name character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    title character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    contact_name character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    department smallint NOT NULL DEFAULT '0'::smallint,
+    company_name character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    bank_account character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    business_status smallint NOT NULL DEFAULT '0'::smallint,
+    business_license character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    demand character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    address character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    tax_id character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    images jsonb NOT NULL DEFAULT '[]'::jsonb,
+    portal_id bigint NOT NULL,
+    portal_code character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    country_prefix character varying COLLATE pg_catalog."default" NOT NULL DEFAULT '+84'::character varying,
+    member_created bigint NOT NULL DEFAULT '0'::bigint,
+    status smallint NOT NULL DEFAULT '1'::smallint,
+    created_at bigint NOT NULL DEFAULT '0'::bigint,
+    modified_at bigint NOT NULL DEFAULT '0'::bigint,
+    member_updated bigint NOT NULL DEFAULT '0'::bigint,
+    profit_margin real NOT NULL DEFAULT '0'::real,
+    min_order_per_mon bigint NOT NULL DEFAULT '0'::bigint,
+    CONSTRAINT "PK_49e91f1e368e3f760789e7764aa" PRIMARY KEY (client_id),
+    CONSTRAINT "UQ_49e91f1e368e3f760789e7764aa" UNIQUE (client_id)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+

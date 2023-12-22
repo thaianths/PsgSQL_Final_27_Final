@@ -1,0 +1,35 @@
+CREATE TABLE IF NOT EXISTS public.base_services_extra
+(
+    portal_id bigint DEFAULT '0'::bigint,
+    portal_code character varying COLLATE pg_catalog."default" DEFAULT ''::character varying,
+    customer_id bigint DEFAULT '0'::bigint,
+    client_id bigint NOT NULL DEFAULT '0'::bigint,
+    country_prefix character varying COLLATE pg_catalog."default" DEFAULT '+84'::character varying,
+    member_created bigint DEFAULT '0'::bigint,
+    member_updated bigint DEFAULT '0'::bigint,
+    status smallint NOT NULL DEFAULT '1'::smallint,
+    created_at bigint DEFAULT '0'::bigint,
+    modified_at bigint DEFAULT '0'::bigint,
+    extra_service_id bigint NOT NULL,
+    extra_service_name character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    service_kind smallint[] NOT NULL DEFAULT '{}'::smallint[],
+    i18n character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    visible boolean NOT NULL DEFAULT true,
+    unit_of_basic_tariff smallint NOT NULL DEFAULT '1'::smallint,
+    unit_name character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    field_of_tariff character varying COLLATE pg_catalog."default" DEFAULT ''::character varying,
+    is_whole smallint NOT NULL DEFAULT '0'::smallint,
+    unit_of_service_tariff smallint DEFAULT '-1'::smallint,
+    unit_service_name character varying COLLATE pg_catalog."default" DEFAULT ''::character varying,
+    show_dimension smallint NOT NULL DEFAULT '1'::smallint,
+    show_check boolean NOT NULL DEFAULT false,
+    mandatory boolean NOT NULL DEFAULT false,
+    field_fee character varying COLLATE pg_catalog."default" DEFAULT ''::character varying,
+    CONSTRAINT "PK_718f77eb2cec4899642ffb58934" PRIMARY KEY (extra_service_id),
+    CONSTRAINT "UQ_718f77eb2cec4899642ffb58934" UNIQUE (extra_service_id)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfModelProduct xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ModelProduct>
+    <tablename>access_right_F</tablename>
+    <type>table</type>
+  </ModelProduct>
+  <ModelProduct>
+    <tablename>area_F</tablename>
+    <type>table</type>
+  </ModelProduct>
+  <ModelProduct>
+    <tablename>avigo_offer_F</tablename>
+    <type>table</type>
+  </ModelProduct>
+  <ModelProduct>
+    <tablename>base_es_mapping_F</tablename>
+    <type>table</type>
+  </ModelProduct>
+  <ModelProduct>
+    <tablename>base_packagings_F</tablename>
+    <type>table</type>
+  </ModelProduct>
+  <ModelProduct>
+    <tablename>base_services_extra_F</tablename>
+    <type>table</type>
+  </ModelProduct>
+  <ModelProduct>
+    <tablename>base_unit_tariff_F</tablename>
+    <type>table</type>
+  </ModelProduct>
+  <ModelProduct>
+    <tablename>base_version_F</tablename>
+    <type>table</type>
+  </ModelProduct>
+</ArrayOfModelProduct>

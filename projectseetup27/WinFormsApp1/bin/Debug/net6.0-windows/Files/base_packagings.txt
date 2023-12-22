@@ -1,0 +1,32 @@
+CREATE TABLE IF NOT EXISTS public.base_packagings
+(
+    portal_id bigint DEFAULT '0'::bigint,
+    portal_code character varying COLLATE pg_catalog."default" DEFAULT ''::character varying,
+    customer_id bigint DEFAULT '0'::bigint,
+    client_id bigint NOT NULL DEFAULT '0'::bigint,
+    country_prefix character varying COLLATE pg_catalog."default" DEFAULT '+84'::character varying,
+    member_created bigint DEFAULT '0'::bigint,
+    member_updated bigint DEFAULT '0'::bigint,
+    status smallint NOT NULL DEFAULT '1'::smallint,
+    created_at bigint DEFAULT '0'::bigint,
+    modified_at bigint DEFAULT '0'::bigint,
+    handling_unit_id bigint NOT NULL,
+    group_id bigint NOT NULL,
+    plength real NOT NULL DEFAULT '0'::real,
+    pheight real NOT NULL DEFAULT '0'::real,
+    pwidth real NOT NULL DEFAULT '0'::real,
+    min_weight real NOT NULL DEFAULT '0'::real,
+    max_weight real NOT NULL DEFAULT '0'::real,
+    volume real NOT NULL DEFAULT '0'::real,
+    units character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    units_weight character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    package_name character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    group_name character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    "desc" character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    CONSTRAINT "PK_5e68625a8cd58e08764cad90f91" PRIMARY KEY (handling_unit_id),
+    CONSTRAINT "UQ_5e68625a8cd58e08764cad90f91" UNIQUE (handling_unit_id)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;

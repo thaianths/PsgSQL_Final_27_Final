@@ -1,0 +1,17 @@
+CREATE TABLE IF NOT EXISTS public.fixed_route_sp
+(
+    fixed_route_id integer NOT NULL,
+    fixed_route_name character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    member_created bigint NOT NULL DEFAULT '0'::bigint,
+    member_updated bigint NOT NULL DEFAULT '0'::bigint,
+    created_at bigint NOT NULL DEFAULT '0'::bigint,
+    modified_at bigint NOT NULL DEFAULT '0'::bigint,
+    status smallint NOT NULL DEFAULT '1'::smallint,
+    client_id bigint NOT NULL DEFAULT '1'::bigint,
+    service_provider_id bigint NOT NULL DEFAULT '1'::bigint,
+    CONSTRAINT "PK_e7529750622bafe2e5a0d544afd" PRIMARY KEY (fixed_route_id)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;

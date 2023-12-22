@@ -1,0 +1,33 @@
+CREATE TABLE IF NOT EXISTS public.myvehicles
+(
+    portal_id bigint DEFAULT '0'::bigint,
+    portal_code character varying COLLATE pg_catalog."default" DEFAULT ''::character varying,
+    customer_id bigint DEFAULT '0'::bigint,
+    client_id bigint NOT NULL DEFAULT '0'::bigint,
+    country_prefix character varying COLLATE pg_catalog."default" DEFAULT '+84'::character varying,
+    member_created bigint DEFAULT '0'::bigint,
+    member_updated bigint DEFAULT '0'::bigint,
+    status smallint NOT NULL DEFAULT '1'::smallint,
+    created_at bigint DEFAULT '0'::bigint,
+    modified_at bigint DEFAULT '0'::bigint,
+    my_vehicle_id bigint NOT NULL,
+    resource_id bigint NOT NULL DEFAULT '0'::bigint,
+    main_driver_id bigint NOT NULL DEFAULT '0'::bigint,
+    main_parking_place bigint NOT NULL DEFAULT '0'::bigint,
+    name_of_owner character varying COLLATE pg_catalog."default" NOT NULL,
+    registration_number character varying COLLATE pg_catalog."default" NOT NULL,
+    service_provider_id bigint NOT NULL DEFAULT '0'::bigint,
+    images jsonb NOT NULL DEFAULT '[]'::jsonb,
+    valid_from bigint NOT NULL DEFAULT '0'::bigint,
+    valid_to bigint NOT NULL DEFAULT '0'::bigint,
+    CONSTRAINT "PK_a2f2c5280da7502684bc0597e25" PRIMARY KEY (my_vehicle_id),
+    CONSTRAINT "FK_484c2e2875dfe8beeca1f2f2dab" FOREIGN KEY (resource_id)
+        REFERENCES public.base_vehicles (resource_id) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+

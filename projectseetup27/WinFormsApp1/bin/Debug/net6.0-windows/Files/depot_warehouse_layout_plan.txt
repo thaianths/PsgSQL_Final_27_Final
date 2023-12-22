@@ -1,0 +1,18 @@
+CREATE TABLE IF NOT EXISTS public.depot_warehouse_layout_plan
+(
+    client_id bigint NOT NULL,
+    service_provider_id bigint NOT NULL,
+    depot_id bigint NOT NULL,
+    area_id character varying COLLATE pg_catalog."default" NOT NULL,
+    area_name character varying COLLATE pg_catalog."default",
+    area_address character varying COLLATE pg_catalog."default",
+    area_size_inm2 character varying COLLATE pg_catalog."default",
+    area_handling_unit_ids character varying COLLATE pg_catalog."default",
+    ares_polygon_id character varying COLLATE pg_catalog."default",
+    area_status character varying COLLATE pg_catalog."default" NOT NULL,
+    CONSTRAINT depot_warehouse_layout_plan_pkey PRIMARY KEY (client_id, service_provider_id, depot_id, area_id)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;

@@ -1,0 +1,19 @@
+CREATE TABLE IF NOT EXISTS public.driver_working_time
+(
+    member_id bigint NOT NULL DEFAULT '0'::bigint,
+    my_vehicle_id bigint NOT NULL DEFAULT '0'::bigint,
+    member_created bigint NOT NULL DEFAULT '0'::bigint,
+    member_updated bigint NOT NULL DEFAULT '0'::bigint,
+    status smallint NOT NULL DEFAULT '0'::smallint,
+    created_at bigint NOT NULL DEFAULT '0'::bigint,
+    modified_at bigint NOT NULL DEFAULT '0'::bigint,
+    id_workingtime bigint NOT NULL DEFAULT '0'::bigint,
+    id character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    offer_id bigint NOT NULL DEFAULT '0'::bigint,
+    CONSTRAINT "PK_2e90e2281cf9edd809e8a671a86" PRIMARY KEY (id),
+    CONSTRAINT "UQ_3ae3efa6e01189e57af55a8d1f1" UNIQUE (id, id_workingtime, offer_id)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;

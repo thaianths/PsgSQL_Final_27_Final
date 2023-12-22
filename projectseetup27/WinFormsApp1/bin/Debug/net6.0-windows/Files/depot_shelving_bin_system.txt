@@ -1,0 +1,30 @@
+CREATE TABLE IF NOT EXISTS public.depot_shelving_bin_system
+(
+    client_id bigint NOT NULL DEFAULT '0'::bigint,
+    service_provider_id bigint NOT NULL DEFAULT '0'::bigint,
+    depot_id bigint NOT NULL DEFAULT '0'::bigint,
+    shelving_bin_id bigint NOT NULL,
+    shelving_bin_name character varying COLLATE pg_catalog."default" NOT NULL,
+    shelving_bin_address character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    shelving_bin_handling_unit_ids character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    shelving_bin_specify character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    shelving_bin_status character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    shelving_bin_polygon character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    shelving_bin_length real NOT NULL DEFAULT '0.001'::real,
+    shelving_bin_width real NOT NULL DEFAULT '0'::real,
+    shelving_bin_hight real NOT NULL DEFAULT '0'::real,
+    shelving_bin_maxweight real NOT NULL DEFAULT '0'::real,
+    longitude real NOT NULL DEFAULT '0'::real,
+    z_position real NOT NULL DEFAULT '0'::real,
+    freespace real NOT NULL DEFAULT '0'::real,
+    reserved_space real NOT NULL DEFAULT '0'::real,
+    latitude real NOT NULL DEFAULT '0'::real,
+    area_name character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    CONSTRAINT depot_shelving_bin_system_pkey PRIMARY KEY (shelving_bin_id)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+

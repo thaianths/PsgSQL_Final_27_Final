@@ -1,0 +1,21 @@
+CREATE TABLE IF NOT EXISTS public.notification
+(
+    title character varying COLLATE pg_catalog."default" NOT NULL,
+    message character varying COLLATE pg_catalog."default" NOT NULL,
+    route_id bigint NOT NULL DEFAULT '0'::bigint,
+    offer_id bigint NOT NULL DEFAULT '0'::bigint,
+    member_id bigint NOT NULL DEFAULT '0'::bigint,
+    status smallint NOT NULL DEFAULT '0'::smallint,
+    created_at bigint NOT NULL DEFAULT '0'::bigint,
+    app_noti_id bigint NOT NULL DEFAULT '0'::bigint,
+    view smallint NOT NULL DEFAULT '0'::smallint,
+    modified_at bigint NOT NULL DEFAULT '0'::bigint,
+    type character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    CONSTRAINT "PK_add1de6a5445a40d2e91a7f979d" PRIMARY KEY (app_noti_id),
+    CONSTRAINT "UQ_02d4d381df8f6744700a088da57" UNIQUE (route_id, offer_id, member_id, type)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+

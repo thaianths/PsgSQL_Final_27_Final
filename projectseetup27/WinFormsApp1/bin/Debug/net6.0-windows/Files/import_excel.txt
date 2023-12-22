@@ -1,0 +1,25 @@
+CREATE TABLE IF NOT EXISTS public.import_excel
+(
+    portal_id bigint DEFAULT '0'::bigint,
+    portal_code character varying COLLATE pg_catalog."default" DEFAULT ''::character varying,
+    customer_id bigint DEFAULT '0'::bigint,
+    client_id bigint NOT NULL DEFAULT '0'::bigint,
+    country_prefix character varying COLLATE pg_catalog."default" DEFAULT '+84'::character varying,
+    member_created bigint DEFAULT '0'::bigint,
+    member_updated bigint DEFAULT '0'::bigint,
+    status smallint NOT NULL DEFAULT '1'::smallint,
+    created_at bigint DEFAULT '0'::bigint,
+    modified_at bigint DEFAULT '0'::bigint,
+    import_excel_id bigint NOT NULL,
+    code character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    name character varying COLLATE pg_catalog."default" NOT NULL,
+    owner_id bigint NOT NULL,
+    type character varying COLLATE pg_catalog."default" NOT NULL DEFAULT 'requestpool'::character varying,
+    options jsonb NOT NULL DEFAULT '{}'::jsonb,
+    value jsonb NOT NULL DEFAULT '[]'::jsonb,
+    CONSTRAINT "PK_e434d70685cd1733062f71b5c64" PRIMARY KEY (import_excel_id)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;

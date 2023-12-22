@@ -1,0 +1,27 @@
+CREATE TABLE IF NOT EXISTS public.mygarage
+(
+    portal_id bigint DEFAULT '0'::bigint,
+    portal_code character varying COLLATE pg_catalog."default" DEFAULT ''::character varying,
+    customer_id bigint DEFAULT '0'::bigint,
+    client_id bigint NOT NULL DEFAULT '0'::bigint,
+    country_prefix character varying COLLATE pg_catalog."default" DEFAULT '+84'::character varying,
+    member_created bigint DEFAULT '0'::bigint,
+    member_updated bigint DEFAULT '0'::bigint,
+    status smallint NOT NULL DEFAULT '1'::smallint,
+    created_at bigint DEFAULT '0'::bigint,
+    modified_at bigint DEFAULT '0'::bigint,
+    garage_id bigint NOT NULL,
+    service_provider_id character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    name character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    contact_name character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    address character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    phone character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    lat real NOT NULL DEFAULT '0'::real,
+    lon real NOT NULL DEFAULT '0'::real,
+    CONSTRAINT "PK_6d28e2d6615bb22dbb5b1fe4973" PRIMARY KEY (garage_id)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+

@@ -1,0 +1,30 @@
+CREATE TABLE IF NOT EXISTS public.district
+(
+    portal_id bigint DEFAULT '0'::bigint,
+    portal_code character varying COLLATE pg_catalog."default" DEFAULT ''::character varying,
+    customer_id bigint DEFAULT '0'::bigint,
+    client_id bigint NOT NULL DEFAULT '0'::bigint,
+    country_prefix character varying COLLATE pg_catalog."default" DEFAULT '+84'::character varying,
+    member_created bigint DEFAULT '0'::bigint,
+    member_updated bigint DEFAULT '0'::bigint,
+    status smallint NOT NULL DEFAULT '1'::smallint,
+    created_at bigint DEFAULT '0'::bigint,
+    modified_at bigint DEFAULT '0'::bigint,
+    did bigint NOT NULL,
+    dname character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    dshort character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    dkey text[] COLLATE pg_catalog."default" NOT NULL,
+    cid bigint NOT NULL DEFAULT '84'::bigint,
+    pid bigint NOT NULL DEFAULT '84'::bigint,
+    pname character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    pshort character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    pkey text[] COLLATE pg_catalog."default" NOT NULL,
+    wards jsonb NOT NULL DEFAULT '[]'::jsonb,
+    aid smallint NOT NULL DEFAULT '0'::smallint,
+    CONSTRAINT "PK_58b491eba12019e82f05997bb4f" PRIMARY KEY (did)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+

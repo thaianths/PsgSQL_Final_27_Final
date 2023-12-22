@@ -1,0 +1,816 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfModelProduct xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ModelProduct>
+    <tablename>access_right_F</tablename>
+    <type>table</type>
+  </ModelProduct>
+  <ModelProduct>
+    <tablename>action_log_F</tablename>
+    <type>table</type>
+  </ModelProduct>
+  <ModelProduct>
+    <tablename>area_F</tablename>
+    <type>table</type>
+  </ModelProduct>
+  <ModelProduct>
+    <tablename>assign_offer_gate_F</tablename>
+    <type>table</type>
+  </ModelProduct>
+  <ModelProduct>
+    <tablename>avigo_offer_F</tablename>
+    <type>table</type>
+  </ModelProduct>
+  <ModelProduct>
+    <tablename>base_effort_condition_F</tablename>
+    <type>table</type>
+  </ModelProduct>
+  <ModelProduct>
+    <tablename>base_es_mapping_F</tablename>
+    <type>table</type>
+  </ModelProduct>
+  <ModelProduct>
+    <tablename>base_group_services_F</tablename>
+    <type>table</type>
+  </ModelProduct>
+  <ModelProduct>
+    <tablename>base_packagings_F</tablename>
+    <type>table</type>
+  </ModelProduct>
+  <ModelProduct>
+    <tablename>base_services_F</tablename>
+    <type>table</type>
+  </ModelProduct>
+  <ModelProduct>
+    <tablename>base_services_extra_F</tablename>
+    <type>table</type>
+  </ModelProduct>
+  <ModelProduct>
+    <tablename>base_ticketcategories_F</tablename>
+    <type>table</type>
+  </ModelProduct>
+  <ModelProduct>
+    <tablename>base_unit_tariff_F</tablename>
+    <type>table</type>
+  </ModelProduct>
+  <ModelProduct>
+    <tablename>base_vehicle_cost_F</tablename>
+    <type>table</type>
+  </ModelProduct>
+  <ModelProduct>
+    <tablename>base_version_F</tablename>
+    <type>table</type>
+  </ModelProduct>
+  <ModelProduct>
+    <tablename>base_workingtime_F</tablename>
+    <type>table</type>
+  </ModelProduct>
+  <ModelProduct>
+    <tablename>bill_list_F</tablename>
+    <type>table</type>
+  </ModelProduct>
+  <ModelProduct>
+    <tablename>child_menu_F</tablename>
+    <type>table</type>
+  </ModelProduct>
+  <ModelProduct>
+    <tablename>clients_F</tablename>
+    <type>table</type>
+  </ModelProduct>
+  <ModelProduct>
+    <tablename>cms_notification_F</tablename>
+    <type>table</type>
+  </ModelProduct>
+  <ModelProduct>
+    <tablename>collection_orderpool_F</tablename>
+    <type>table</type>
+  </ModelProduct>
+  <ModelProduct>
+    <tablename>collection_orderpool_detail_F</tablename>
+    <type>table</type>
+  </ModelProduct>
+  <ModelProduct>
+    <tablename>create_tour_history_F</tablename>
+    <type>table</type>
+  </ModelProduct>
+  <ModelProduct>
+    <tablename>customers_F</tablename>
+    <type>table</type>
+  </ModelProduct>
+  <ModelProduct>
+    <tablename>depot_collection_orderpool_F</tablename>
+    <type>table</type>
+  </ModelProduct>
+  <ModelProduct>
+    <tablename>demo_request_F</tablename>
+    <type>table</type>
+  </ModelProduct>
+  <ModelProduct>
+    <tablename>demo_route_F</tablename>
+    <type>table</type>
+  </ModelProduct>
+  <ModelProduct>
+    <tablename>depot_addresspool_F</tablename>
+    <type>table</type>
+  </ModelProduct>
+  <ModelProduct>
+    <tablename>depot_basegood_units_F</tablename>
+    <type>table</type>
+  </ModelProduct>
+  <ModelProduct>
+    <tablename>depot_basegoods_F</tablename>
+    <type>table</type>
+  </ModelProduct>
+  <ModelProduct>
+    <tablename>depot_check_receiving_items_F</tablename>
+    <type>table</type>
+  </ModelProduct>
+  <ModelProduct>
+    <tablename>depot_failtype_F</tablename>
+    <type>table</type>
+  </ModelProduct>
+  <ModelProduct>
+    <tablename>depot_gate_location_F</tablename>
+    <type>table</type>
+  </ModelProduct>
+  <ModelProduct>
+    <tablename>depot_inout_management_F</tablename>
+    <type>table</type>
+  </ModelProduct>
+  <ModelProduct>
+    <tablename>depot_item_failes_F</tablename>
+    <type>table</type>
+  </ModelProduct>
+  <ModelProduct>
+    <tablename>depot_item_collection_orderpool_F</tablename>
+    <type>table</type>
+  </ModelProduct>
+  <ModelProduct>
+    <tablename>depot_item_manager_F</tablename>
+    <type>table</type>
+  </ModelProduct>
+  <ModelProduct>
+    <tablename>depot_itemwaitfor_moving_F</tablename>
+    <type>table</type>
+  </ModelProduct>
+  <ModelProduct>
+    <tablename>depot_itemwaitfor_picking_F</tablename>
+    <type>table</type>
+  </ModelProduct>
+  <ModelProduct>
+    <tablename>depot_itemwithout_shelving_F</tablename>
+    <type>table</type>
+  </ModelProduct>
+  <ModelProduct>
+    <tablename>depot_packing_sequence_F</tablename>
+    <type>table</type>
+  </ModelProduct>
+  <ModelProduct>
+    <tablename>depot_packing_sequence_details_F</tablename>
+    <type>table</type>
+  </ModelProduct>
+  <ModelProduct>
+    <tablename>depot_requestpool_F</tablename>
+    <type>table</type>
+  </ModelProduct>
+  <ModelProduct>
+    <tablename>depot_shelving_bin_manager_F</tablename>
+    <type>table</type>
+  </ModelProduct>
+  <ModelProduct>
+    <tablename>depot_shelving_bin_system_F</tablename>
+    <type>table</type>
+  </ModelProduct>
+  <ModelProduct>
+    <tablename>depot_shelving_rent_F</tablename>
+    <type>table</type>
+  </ModelProduct>
+  <ModelProduct>
+    <tablename>depot_sherving_requestprovider_F</tablename>
+    <type>table</type>
+  </ModelProduct>
+  <ModelProduct>
+    <tablename>depot_warehouse_layout_plan_F</tablename>
+    <type>table</type>
+  </ModelProduct>
+  <ModelProduct>
+    <tablename>device_info_F</tablename>
+    <type>table</type>
+  </ModelProduct>
+  <ModelProduct>
+    <tablename>district_F</tablename>
+    <type>table</type>
+  </ModelProduct>
+  <ModelProduct>
+    <tablename>district_tariff_F</tablename>
+    <type>table</type>
+  </ModelProduct>
+  <ModelProduct>
+    <tablename>driver_payment_agreement_F</tablename>
+    <type>table</type>
+  </ModelProduct>
+  <ModelProduct>
+    <tablename>driver_rating_F</tablename>
+    <type>table</type>
+  </ModelProduct>
+  <ModelProduct>
+    <tablename>driver_working_time_F</tablename>
+    <type>table</type>
+  </ModelProduct>
+  <ModelProduct>
+    <tablename>driveroffer_F</tablename>
+    <type>table</type>
+  </ModelProduct>
+  <ModelProduct>
+    <tablename>extra_service_F</tablename>
+    <type>table</type>
+  </ModelProduct>
+  <ModelProduct>
+    <tablename>fixed_route_details_F</tablename>
+    <type>table</type>
+  </ModelProduct>
+  <ModelProduct>
+    <tablename>fixed_route_price_lists_F</tablename>
+    <type>table</type>
+  </ModelProduct>
+  <ModelProduct>
+    <tablename>requestpools_F</tablename>
+    <type>table</type>
+  </ModelProduct>
+  <ModelProduct>
+    <tablename>transport_info_F</tablename>
+    <type>table</type>
+  </ModelProduct>
+  <ModelProduct>
+    <tablename>ghn_district_F</tablename>
+    <type>table</type>
+  </ModelProduct>
+  <ModelProduct>
+    <tablename>ghn_province_F</tablename>
+    <type>table</type>
+  </ModelProduct>
+  <ModelProduct>
+    <tablename>ghn_ward_F</tablename>
+    <type>table</type>
+  </ModelProduct>
+  <ModelProduct>
+    <tablename>group_service_F</tablename>
+    <type>table</type>
+  </ModelProduct>
+  <ModelProduct>
+    <tablename>history_order_paid_F</tablename>
+    <type>table</type>
+  </ModelProduct>
+  <ModelProduct>
+    <tablename>history_reconcile_rp_F</tablename>
+    <type>table</type>
+  </ModelProduct>
+  <ModelProduct>
+    <tablename>fixed_route_list_F</tablename>
+    <type>table</type>
+  </ModelProduct>
+  <ModelProduct>
+    <tablename>history_sended_noti_F</tablename>
+    <type>table</type>
+  </ModelProduct>
+  <ModelProduct>
+    <tablename>import_excel_F</tablename>
+    <type>table</type>
+  </ModelProduct>
+  <ModelProduct>
+    <tablename>latlon_F</tablename>
+    <type>table</type>
+  </ModelProduct>
+  <ModelProduct>
+    <tablename>logtest_F</tablename>
+    <type>table</type>
+  </ModelProduct>
+  <ModelProduct>
+    <tablename>membergroup_F</tablename>
+    <type>table</type>
+  </ModelProduct>
+  <ModelProduct>
+    <tablename>memberinfo_F</tablename>
+    <type>table</type>
+  </ModelProduct>
+  <ModelProduct>
+    <tablename>mydepots_F</tablename>
+    <type>table</type>
+  </ModelProduct>
+  <ModelProduct>
+    <tablename>mygarage_F</tablename>
+    <type>table</type>
+  </ModelProduct>
+  <ModelProduct>
+    <tablename>myparkings_F</tablename>
+    <type>table</type>
+  </ModelProduct>
+  <ModelProduct>
+    <tablename>myserviceinfo_F</tablename>
+    <type>table</type>
+  </ModelProduct>
+  <ModelProduct>
+    <tablename>myvehicle_extend_F</tablename>
+    <type>table</type>
+  </ModelProduct>
+  <ModelProduct>
+    <tablename>myvehicle_maintaining_F</tablename>
+    <type>table</type>
+  </ModelProduct>
+  <ModelProduct>
+    <tablename>notification_F</tablename>
+    <type>table</type>
+  </ModelProduct>
+  <ModelProduct>
+    <tablename>parent_menu_F</tablename>
+    <type>table</type>
+  </ModelProduct>
+  <ModelProduct>
+    <tablename>partner_info_F</tablename>
+    <type>table</type>
+  </ModelProduct>
+  <ModelProduct>
+    <tablename>partner_maintenance_F</tablename>
+    <type>table</type>
+  </ModelProduct>
+  <ModelProduct>
+    <tablename>partner_order_F</tablename>
+    <type>table</type>
+  </ModelProduct>
+  <ModelProduct>
+    <tablename>partner_timeout_F</tablename>
+    <type>table</type>
+  </ModelProduct>
+  <ModelProduct>
+    <tablename>portals_F</tablename>
+    <type>table</type>
+  </ModelProduct>
+  <ModelProduct>
+    <tablename>promotion_F</tablename>
+    <type>table</type>
+  </ModelProduct>
+  <ModelProduct>
+    <tablename>promotion_rp_F</tablename>
+    <type>table</type>
+  </ModelProduct>
+  <ModelProduct>
+    <tablename>province_F</tablename>
+    <type>table</type>
+  </ModelProduct>
+  <ModelProduct>
+    <tablename>reconcile_order_F</tablename>
+    <type>table</type>
+  </ModelProduct>
+  <ModelProduct>
+    <tablename>requestlist_F</tablename>
+    <type>table</type>
+  </ModelProduct>
+  <ModelProduct>
+    <tablename>myvehicles_F</tablename>
+    <type>table</type>
+  </ModelProduct>
+  <ModelProduct>
+    <tablename>requestpool_F</tablename>
+    <type>table</type>
+  </ModelProduct>
+  <ModelProduct>
+    <tablename>routeinfo_F</tablename>
+    <type>table</type>
+  </ModelProduct>
+  <ModelProduct>
+    <tablename>sequenceinfo_F</tablename>
+    <type>table</type>
+  </ModelProduct>
+  <ModelProduct>
+    <tablename>serviceprovider_services_F</tablename>
+    <type>table</type>
+  </ModelProduct>
+  <ModelProduct>
+    <tablename>serviceproviderinfo_F</tablename>
+    <type>table</type>
+  </ModelProduct>
+  <ModelProduct>
+    <tablename>socket_clientpool_F</tablename>
+    <type>table</type>
+  </ModelProduct>
+  <ModelProduct>
+    <tablename>sparepart_F</tablename>
+    <type>table</type>
+  </ModelProduct>
+  <ModelProduct>
+    <tablename>sparepart_group_F</tablename>
+    <type>table</type>
+  </ModelProduct>
+  <ModelProduct>
+    <tablename>sparepart_history_F</tablename>
+    <type>table</type>
+  </ModelProduct>
+  <ModelProduct>
+    <tablename>spx_address_F</tablename>
+    <type>table</type>
+  </ModelProduct>
+  <ModelProduct>
+    <tablename>tariff_F</tablename>
+    <type>table</type>
+  </ModelProduct>
+  <ModelProduct>
+    <tablename>tariff_buy_F</tablename>
+    <type>table</type>
+  </ModelProduct>
+  <ModelProduct>
+    <tablename>requestproviderinfo_F</tablename>
+    <type>table</type>
+  </ModelProduct>
+  <ModelProduct>
+    <tablename>tariff_extra_buy_F</tablename>
+    <type>table</type>
+  </ModelProduct>
+  <ModelProduct>
+    <tablename>tariff_extra_sell_F</tablename>
+    <type>table</type>
+  </ModelProduct>
+  <ModelProduct>
+    <tablename>tariff_sell_F</tablename>
+    <type>table</type>
+  </ModelProduct>
+  <ModelProduct>
+    <tablename>ticket_categories_F</tablename>
+    <type>table</type>
+  </ModelProduct>
+  <ModelProduct>
+    <tablename>ticket_membergroup_processing_F</tablename>
+    <type>table</type>
+  </ModelProduct>
+  <ModelProduct>
+    <tablename>tracking_shipping_order_F</tablename>
+    <type>table</type>
+  </ModelProduct>
+  <ModelProduct>
+    <tablename>transport_add_cost_F</tablename>
+    <type>table</type>
+  </ModelProduct>
+  <ModelProduct>
+    <tablename>transportservice_check_F</tablename>
+    <type>table</type>
+  </ModelProduct>
+  <ModelProduct>
+    <tablename>users_F</tablename>
+    <type>table</type>
+  </ModelProduct>
+  <ModelProduct>
+    <tablename>vnp_district_F</tablename>
+    <type>table</type>
+  </ModelProduct>
+  <ModelProduct>
+    <tablename>vnp_province_F</tablename>
+    <type>table</type>
+  </ModelProduct>
+  <ModelProduct>
+    <tablename>vnp_ward_F</tablename>
+    <type>table</type>
+  </ModelProduct>
+  <ModelProduct>
+    <tablename>ward_F</tablename>
+    <type>table</type>
+  </ModelProduct>
+  <ModelProduct>
+    <tablename>ward_geo_F</tablename>
+    <type>table</type>
+  </ModelProduct>
+  <ModelProduct>
+    <tablename>working_time_F</tablename>
+    <type>table</type>
+  </ModelProduct>
+  <ModelProduct>
+    <tablename>zone_compose_list_F</tablename>
+    <type>table</type>
+  </ModelProduct>
+  <ModelProduct>
+    <tablename>zone_group_F</tablename>
+    <type>table</type>
+  </ModelProduct>
+  <ModelProduct>
+    <tablename>zone_group_tariff_F</tablename>
+    <type>table</type>
+  </ModelProduct>
+  <ModelProduct>
+    <tablename>base_vehicles_F</tablename>
+    <type>table</type>
+  </ModelProduct>
+  <ModelProduct>
+    <tablename>ticket_inputpool_F</tablename>
+    <type>table</type>
+  </ModelProduct>
+  <ModelProduct>
+    <tablename>ticket_detailpool_F</tablename>
+    <type>table</type>
+  </ModelProduct>
+  <ModelProduct>
+    <tablename>myvehicle_energy_consumption_F</tablename>
+    <type>table</type>
+  </ModelProduct>
+  <ModelProduct>
+    <tablename>daily_driver_summary_F</tablename>
+    <type>view</type>
+  </ModelProduct>
+  <ModelProduct>
+    <tablename>daily_rp_summary_F</tablename>
+    <type>view</type>
+  </ModelProduct>
+  <ModelProduct>
+    <tablename>fixed_route_revenue_summary_F</tablename>
+    <type>view</type>
+  </ModelProduct>
+  <ModelProduct>
+    <tablename>offer_tour_prepare_F</tablename>
+    <type>view</type>
+  </ModelProduct>
+  <ModelProduct>
+    <tablename>request_tour_prepare_F</tablename>
+    <type>view</type>
+  </ModelProduct>
+  <ModelProduct>
+    <tablename>daily_sp_summary_F</tablename>
+    <type>view</type>
+  </ModelProduct>
+  <ModelProduct>
+    <tablename>CREATE OR REPLACE FUNCTION public.totalrecords()
+ RETURNS integer
+ LANGUAGE plpgsql
+AS $function$
+declare
+	total integer;
+BEGIN
+   SELECT count(*) into total FROM COMPANY;
+   RETURN total;
+END;
+$function$
+_F</tablename>
+    <type>function</type>
+  </ModelProduct>
+  <ModelProduct>
+    <tablename>CREATE OR REPLACE FUNCTION public.auditlogfunc()
+ RETURNS trigger
+ LANGUAGE plpgsql
+AS $function$
+   BEGIN
+      INSERT INTO AUDIT(EMP_ID, ENTRY_DATE) VALUES (new.ID, current_timestamp);
+      RETURN NEW;
+   END;
+$function$
+_F</tablename>
+    <type>trigger</type>
+  </ModelProduct>
+  <ModelProduct>
+    <tablename>CREATE OR REPLACE FUNCTION public.testrecords()
+ RETURNS integer
+ LANGUAGE plpgsql
+AS $function$
+declare
+	total integer;
+BEGIN
+   SELECT count(*) into total FROM COMPANY;
+   RETURN total;
+END;
+$function$
+_F</tablename>
+    <type>function</type>
+  </ModelProduct>
+  <ModelProduct>
+    <tablename>CREATE OR REPLACE FUNCTION public.selectcountrecords()
+ RETURNS integer
+ LANGUAGE plpgsql
+AS $function$
+declare
+	total integer;
+BEGIN
+   SELECT count(*) into total FROM COMPANY;
+   RETURN total;
+END;
+$function$
+_F</tablename>
+    <type>function</type>
+  </ModelProduct>
+  <ModelProduct>
+    <tablename>CREATE OR REPLACE FUNCTION public.get_car_price(price_from integer, price_to integer)
+ RETURNS integer
+ LANGUAGE plpgsql
+AS $function$  
+Declare  
+ Car_count integer;  
+Begin  
+   select count(*)   
+   into Car_count  
+   from Car  
+   where Car_price between Price_from and Price_to;  
+   return Car_count;  
+End;  
+$function$
+_F</tablename>
+    <type>function</type>
+  </ModelProduct>
+  <ModelProduct>
+    <tablename>CREATE OR REPLACE FUNCTION public.logfunc()
+ RETURNS trigger
+ LANGUAGE plpgsql
+AS $function$
+   BEGIN
+      INSERT INTO AUDIT(EMP_ID, ENTRY_DATE) VALUES (new.ID, current_timestamp);
+      RETURN NEW;
+   END;
+$function$
+_F</tablename>
+    <type>trigger</type>
+  </ModelProduct>
+  <ModelProduct>
+    <tablename>CREATE OR REPLACE FUNCTION public.examplelogfunc()
+ RETURNS trigger
+ LANGUAGE plpgsql
+AS $function$
+   BEGIN
+      INSERT INTO AUDIT(EMP_ID, ENTRY_DATE) VALUES (new.ID, current_timestamp);
+      RETURN NEW;
+   END;
+$function$
+_F</tablename>
+    <type>trigger</type>
+  </ModelProduct>
+  <ModelProduct>
+    <tablename>CREATE OR REPLACE FUNCTION public.createexamplelogfunc()
+ RETURNS trigger
+ LANGUAGE plpgsql
+AS $function$
+   BEGIN
+      INSERT INTO AUDIT(EMP_ID, ENTRY_DATE) VALUES (new.ID, current_timestamp);
+      RETURN NEW;
+   END;
+$function$
+_F</tablename>
+    <type>trigger</type>
+  </ModelProduct>
+  <ModelProduct>
+    <tablename>CREATE OR REPLACE PROCEDURE public.update_working_performed(IN client integer)
+ LANGUAGE plpgsql
+AS $procedure$
+declare
+begin
+
+	INSERT INTO public.working_time_performed(
+	portal_id, portal_code, customer_id, client_id, country_prefix, status, created_at, 
+	working_performed_id, member_id, working_mode, resource_id, 
+	from_lat, from_lon, from_address, to_lat, to_lon, to_address, login_workingtime, 
+	logout_workingtime, service_provider_id, remark)	
+	SELECT 
+	portal_id, portal_code, customer_id, client_id, country_prefix, status,created_at, 
+	working_id, member_id, working_mode,resource_id, 
+	from_lat,from_lon, from_address,  to_lat, to_lon, to_address, from_workingtime, 
+	to_workingtime, service_provider_id, remark
+	FROM public.working_time
+	where client_id = client;
+end
+$procedure$
+_F</tablename>
+    <type>procedure</type>
+  </ModelProduct>
+  <ModelProduct>
+    <tablename>CREATE OR REPLACE PROCEDURE public.driver_billing(IN client integer)
+ LANGUAGE plpgsql
+AS $procedure$
+declare
+    mviews RECORD;
+	declare
+	v_service varchar(50);
+	service_info text[];
+	s_info varchar(30);	
+	
+begin
+	TRUNCATE TABLE bill_list;	
+	-- get transport service from transport_info
+	insert into bill_list(portal_id,portal_code,client_id,request_provider_id,
+		request_id,transport_id,service_provider_id,driver_id,route_id,
+						performed_datetime,
+					service_id,service,service_revenue,service_cost)
+	SELECT r.portal_id,r.portal_code,r.client_id,r.request_provider_id,
+	t.request_id,t.transport_id,t.service_provider_id,t.driver_id,t.route_id, 
+	to_char(to_timestamp((t.pickup_time / 1000)::double precision), 'YYYY-MM-DD HH:MI'::text),	
+		t.service_id,'shipping',r.shipping_fee,'0.0'
+	from transport_info t 	
+	JOIN requestpools r ON t.request_id = r.request_id
+	where t.status = 2;-- and r.client_id = client;
+	
+	 -- get extra_service and extra service cost from transport-info
+	FOR mviews IN
+       SELECT r.portal_id,r.portal_code,r.client_id,r.request_provider_id,
+	   t.request_id , t.transport_id,t.service_provider_id,t.driver_id,string_to_array(extra_service,';') as services,
+	   t.route_id,t.pickup_time
+	   from transport_info t 	
+	   JOIN requestpools r ON t.request_id = r.request_id
+	   where t.status = 2 and length(t.extra_service) &gt;0
+        -- Now "mviews" has one record with information about transport view
+		LOOP
+			FOREACH v_service IN ARRAY mviews.services
+		 	LOOP
+			select string_to_array(v_service,'|') into service_info;
+--convert to text: to_char(to_timestamp((mviews.pickup_time / 1000)::double precision), 'YYYY-MM-DD HH:MI'::text);
+--convert to date:  date(to_timestamp((t.pickup_time / 1000)::double precision))
+			insert into bill_list(portal_id,portal_code,client_id,request_provider_id,
+							request_id,transport_id,service_provider_id,driver_id,route_id,
+								  performed_datetime,
+								  service_id,service,service_revenue,service_cost)
+					values(mviews.portal_id,mviews.portal_code,mviews.client_id,mviews.request_provider_id,
+						mviews.request_id,mviews.transport_id,mviews.service_provider_id,mviews.driver_id,mviews.route_id,
+					to_char(to_timestamp((mviews.pickup_time / 1000)::double precision), 'YYYY-MM-DD HH:MI'::text),						   
+						   service_info[1],service_info[2],'0.0',service_info[3]);
+		  	END LOOP;		
+		 END LOOP;		
+	-- get service effort from routeinfo
+end
+$procedure$
+_F</tablename>
+    <type>procedure</type>
+  </ModelProduct>
+  <ModelProduct>
+    <tablename>CREATE OR REPLACE PROCEDURE public.vehicle_cost_calculation(IN from_datetime bigint, IN to_datetime bigint)
+ LANGUAGE plpgsql
+AS $procedure$
+declare
+    mviews RECORD;	
+	v_service varchar(50);
+	service_info text[];
+	s_info varchar(30);	
+	
+begin
+	TRUNCATE TABLE vehicle_cost_bill;	
+	-- get transport service from transport_info
+	INSERT INTO public.vehicle_cost_bill(
+		my_vehicle_id, charge_person, kind_of_service, 
+		service_datetime, service_cost, service_vat, service_company)
+	SELECT my_vehicle_id,charge_person,reason_for_service,
+		service_begin,service_cost,vat,service_company
+	from myvehicle_maintaining mv
+	where mv.service_begin &gt;=  from_datetime  and mv.service_begin &lt;=to_datetime;
+	
+	INSERT INTO public.vehicle_cost_bill(
+		my_vehicle_id, charge_person, kind_of_service, 
+		service_datetime, service_cost, service_vat, service_company)
+	SELECT my_vehicle_id, charge_person,energy_name,
+		service_datetime,service_cost, vat, service_company
+	from myvehicle_energy_consumption me
+	where  me.service_datetime &gt;=  from_datetime  and me.service_datetime &lt;=to_datetime;
+	
+end
+$procedure$
+_F</tablename>
+    <type>procedure</type>
+  </ModelProduct>
+  <ModelProduct>
+    <tablename>CREATE OR REPLACE PROCEDURE public.update_demodata(IN client integer)
+ LANGUAGE plpgsql
+AS $procedure$
+	DECLARE v_from_workingtime bigint;
+	v_to_workingtime bigint;	
+begin
+	v_from_workingtime = EXTRACT(EPOCH FROM  current_date -1) ;
+	v_to_workingtime =  EXTRACT(EPOCH FROM  current_date+1);
+	
+	TRUNCATE TABLE demo_request;
+	
+	insert into demo_request(client_id,request_id)
+	SELECT r.client_id,	t.request_id
+	from transport_info t, requestpools r 
+	where r.request_id = t.request_id and r.status &gt;0 and r.client_id = client;
+
+	update transport_info
+	set sender_phone = concat_ws(' '::text, current_date::text, to_char(to_timestamp((pickup_time / 1000)), 'HH24:MI'::text)) 
+	from requestpools 
+	where requestpools.request_id = transport_info.request_id and transport_info.status &gt;0;
+
+	update transport_info
+	set pickup_time = EXTRACT(EPOCH FROM   cast (sender_phone as timestamp))
+	from requestpools 
+	where requestpools.request_id = transport_info.request_id and transport_info.status &gt;0;
+
+	update requestpools
+	set status = 0 
+	where request_id in ( select distinct request_id from request_demo where client_id = client);
+
+	TRUNCATE TABLE demo_route;
+	insert into route_demo(route_id) select route_id from sequenceinfo
+	where request_id in ( select distinct request_id from demo_request );
+
+	delete from sequenceinfo
+	where request_id in ( select distinct request_id from demo_request );
+
+	delete from routeinfo
+	where route_id in ( select distinct route_id from demo_route);
+
+	update driveroffer
+	set fromworkingtime = v_from_workingtime,
+	to_workingtime = v_from_workingtime,
+	status =0
+	where route_id in ( select distinct route_id from demo_route);
+end
+$procedure$
+_F</tablename>
+    <type>procedure</type>
+  </ModelProduct>
+</ArrayOfModelProduct>

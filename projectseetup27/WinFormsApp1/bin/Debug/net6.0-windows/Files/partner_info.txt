@@ -1,0 +1,27 @@
+CREATE TABLE IF NOT EXISTS public.partner_info
+(
+    partner_id bigint NOT NULL,
+    client_id bigint NOT NULL DEFAULT '0'::bigint,
+    client_key character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    secret_key character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    partner_client_key character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    partner_secret_key character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    partner_url character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    status smallint NOT NULL DEFAULT '1'::smallint,
+    kind_of_provider smallint NOT NULL DEFAULT '1'::smallint,
+    member_created bigint NOT NULL DEFAULT '0'::bigint,
+    created_at bigint NOT NULL DEFAULT '0'::bigint,
+    modified_at bigint NOT NULL DEFAULT '0'::bigint,
+    partner_name character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    partner_code character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    payment_method smallint NOT NULL DEFAULT '1'::smallint,
+    shop_id character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    access_token character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    CONSTRAINT "PK_da17d29bc7a48736e474a872f0e" PRIMARY KEY (partner_id),
+    CONSTRAINT "UQ_70fa4a245d73932f0c1da26af09" UNIQUE (partner_id, kind_of_provider)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+

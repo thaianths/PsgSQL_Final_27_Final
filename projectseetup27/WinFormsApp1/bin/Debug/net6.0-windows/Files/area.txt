@@ -1,0 +1,25 @@
+CREATE TABLE IF NOT EXISTS public.area
+(
+    portal_id bigint DEFAULT '0'::bigint,
+    portal_code character varying COLLATE pg_catalog."default" DEFAULT ''::character varying,
+    customer_id bigint DEFAULT '0'::bigint,
+    client_id bigint NOT NULL DEFAULT '0'::bigint,
+    country_prefix character varying COLLATE pg_catalog."default" DEFAULT '+84'::character varying,
+    member_created bigint DEFAULT '0'::bigint,
+    member_updated bigint DEFAULT '0'::bigint,
+    status smallint NOT NULL DEFAULT '1'::smallint,
+    created_at bigint DEFAULT '0'::bigint,
+    modified_at bigint DEFAULT '0'::bigint,
+    aid bigint NOT NULL,
+    cid bigint NOT NULL DEFAULT '84'::bigint,
+    aname character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    ashort character varying COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    akey text[] COLLATE pg_catalog."default" NOT NULL,
+    provinces jsonb NOT NULL DEFAULT '[]'::jsonb,
+    CONSTRAINT "PK_71e5b4aaf2e17aa710cd76f1d98" PRIMARY KEY (aid),
+    CONSTRAINT "UQ_71e5b4aaf2e17aa710cd76f1d98" UNIQUE (aid)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
